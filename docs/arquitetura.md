@@ -21,6 +21,7 @@ flowchart LR
         RL[Enneal.Algoritmos.RateLimit]
         MC[Enneal.Algoritmos.MenorCaminho]
         BU[Enneal.Algoritmos.Busca]
+        TH[Enneal.Algoritmos.TorreHanoi]
     end
     subgraph samples["samples/ (exemplos de console)"]
         S1[n-rainhas-8x8]
@@ -31,6 +32,7 @@ flowchart LR
         S6[rate-limit-token-bucket]
         S7[dijkstra-a-estrela]
         S8[busca-linear-vs-binaria]
+        S9[torre-de-hanoi]
     end
     T[tests/Enneal.Algoritmos.Tests]
 
@@ -42,6 +44,7 @@ flowchart LR
     S6 --> RL
     S7 --> MC
     S8 --> BU
+    S9 --> TH
     T --> src
     T --> samples
 ```
@@ -57,6 +60,7 @@ flowchart LR
 | `Enneal.Algoritmos.RateLimit` | biblioteca | `TokenBucket` e a simulação da fila do servidor |
 | `Enneal.Algoritmos.MenorCaminho` | biblioteca | Dijkstra e A\* num mapa em grade com pesos |
 | `Enneal.Algoritmos.Busca` | biblioteca | busca linear e binária, gerador do vetor e medição de escala |
+| `Enneal.Algoritmos.TorreHanoi` | biblioteca | recursão da Torre de Hanói, pinos que conferem a regra e a conta 2ⁿ − 1 com `UInt128` |
 | `samples/*` | console | um programa por Reel, com a saída esperada em `saida-esperada.txt` |
 | `Enneal.Algoritmos.Tests` | xUnit | números dos Reels, propriedades e saída dos exemplos |
 

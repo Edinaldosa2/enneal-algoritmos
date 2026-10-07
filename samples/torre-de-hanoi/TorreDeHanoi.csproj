@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Exemplo: Torre de Hanói com 3, 4 e 6 discos, e a conta dos 64 discos. -->
+  <!-- Para rodar: dotnet run (dentro desta pasta). -->
+
+  <PropertyGroup>
+    <AssemblyName>TorreDeHanoi</AssemblyName>
+    <RootNamespace>TorreDeHanoi</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../../src/Enneal.Algoritmos.TorreHanoi/Enneal.Algoritmos.TorreHanoi.csproj" />
+  </ItemGroup>
+
+</Project>
