@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "n-rainhas", "n-rainhas", "{6674DBC8-1E19-483B-8D1A-2E23489890B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NRainhas", "n-rainhas\basico\NRainhas.csproj", "{AEB22907-B8CB-466D-A82E-F599EF66D30E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NRainhasLongo", "n-rainhas\4x4-ate-8x8\NRainhasLongo.csproj", "{4F5A5C74-F33F-4035-801A-6AA48A4763B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForcaBrutaSenha", "forca-bruta-senha\ForcaBrutaSenha.csproj", "{74C872E5-ECA3-411F-97F7-6C385B0F300C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaminhoDoInvasor", "caminho-do-invasor\CaminhoDoInvasor.csproj", "{C4E3E50A-71EB-4047-960E-9B2099DDEBB2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CorridaDeOrdenacoes", "corrida-de-ordenacoes\CorridaDeOrdenacoes.csproj", "{20338CD3-E8BB-48FC-A470-40E82CAE52A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RateLimitTokenBucket", "rate-limit-token-bucket\RateLimitTokenBucket.csproj", "{BAE4689D-63FB-44AF-9CB9-D18637BAF745}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AEB22907-B8CB-466D-A82E-F599EF66D30E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEB22907-B8CB-466D-A82E-F599EF66D30E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEB22907-B8CB-466D-A82E-F599EF66D30E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEB22907-B8CB-466D-A82E-F599EF66D30E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F5A5C74-F33F-4035-801A-6AA48A4763B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F5A5C74-F33F-4035-801A-6AA48A4763B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F5A5C74-F33F-4035-801A-6AA48A4763B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F5A5C74-F33F-4035-801A-6AA48A4763B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74C872E5-ECA3-411F-97F7-6C385B0F300C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74C872E5-ECA3-411F-97F7-6C385B0F300C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74C872E5-ECA3-411F-97F7-6C385B0F300C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74C872E5-ECA3-411F-97F7-6C385B0F300C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4E3E50A-71EB-4047-960E-9B2099DDEBB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4E3E50A-71EB-4047-960E-9B2099DDEBB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4E3E50A-71EB-4047-960E-9B2099DDEBB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4E3E50A-71EB-4047-960E-9B2099DDEBB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20338CD3-E8BB-48FC-A470-40E82CAE52A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20338CD3-E8BB-48FC-A470-40E82CAE52A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20338CD3-E8BB-48FC-A470-40E82CAE52A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20338CD3-E8BB-48FC-A470-40E82CAE52A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAE4689D-63FB-44AF-9CB9-D18637BAF745}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAE4689D-63FB-44AF-9CB9-D18637BAF745}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAE4689D-63FB-44AF-9CB9-D18637BAF745}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAE4689D-63FB-44AF-9CB9-D18637BAF745}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AEB22907-B8CB-466D-A82E-F599EF66D30E} = {6674DBC8-1E19-483B-8D1A-2E23489890B6}
+		{4F5A5C74-F33F-4035-801A-6AA48A4763B3} = {6674DBC8-1E19-483B-8D1A-2E23489890B6}
+	EndGlobalSection
+EndGlobal

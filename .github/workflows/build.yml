@@ -1,0 +1,25 @@
+# Compila todos os projetos (sem avisos) e roda cada programa a cada push.
+name: build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - name: Compilar
+        run: dotnet build enneal-algoritmos.sln -c Release -warnaserror
+      - name: Rodar
+        run: |
+          for p in n-rainhas/basico n-rainhas/4x4-ate-8x8 forca-bruta-senha caminho-do-invasor corrida-de-ordenacoes rate-limit-token-bucket; do
+            echo "::group::$p"
+            dotnet run -c Release --no-build --project "$p"
+            echo "::endgroup::"
+          done

@@ -1,0 +1,21 @@
+<Project>
+
+  <!--
+    Configurações comuns a TODOS os projetos deste repositório.
+    O MSBuild lê este arquivo automaticamente para cada .csproj nas subpastas.
+  -->
+
+  <PropertyGroup>
+    <LangVersion>12</LangVersion>
+
+    <!-- Saída igual em qualquer computador (ponto como separador decimal, etc.). -->
+    <InvariantGlobalization>true</InvariantGlobalization>
+
+    <Authors>Edinaldo Sá</Authors>
+    <Company>Enneal</Company>
+    <Product>enneal-algoritmos</Product>
+    <Copyright>Copyright (c) 2026 Edinaldo Sá / Enneal</Copyright>
+    <RepositoryUrl>https://github.com/Edinaldosa2/enneal-algoritmos</RepositoryUrl>
+  </PropertyGroup>
+
+</Project>

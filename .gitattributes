@@ -1,0 +1,10 @@
+# Normaliza finais de linha: LF no repositório, o git ajusta no checkout.
+* text=auto
+
+*.cs      text diff=csharp
+*.csproj  text
+*.props   text
+*.md      text
+*.yml     text
+*.sln     text eol=crlf
+*.sh      text eol=lf

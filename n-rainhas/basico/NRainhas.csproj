@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- N-Rainhas 8x8 com backtracking. -->
+  <!-- Projeto console .NET 8. Para rodar: dotnet run (dentro desta pasta). -->
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AssemblyName>NRainhas</AssemblyName>
+    <RootNamespace>NRainhas</RootNamespace>
+  </PropertyGroup>
+
+</Project>
