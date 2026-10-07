@@ -1,0 +1,57 @@
+# Integração contínua: compila sem avisos, roda os testes e executa cada exemplo.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: build e testes (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+
+    env:
+      DOTNET_NOLOGO: true
+      DOTNET_CLI_TELEMETRY_OPTOUT: true
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restaurar
+        run: dotnet restore enneal-algoritmos.sln
+
+      - name: Compilar (sem avisos)
+        run: dotnet build enneal-algoritmos.sln -c Release --no-restore -warnaserror
+
+      - name: Testar
+        run: dotnet test enneal-algoritmos.sln -c Release --no-build --logger "trx;LogFileName=resultados.trx" --results-directory testes
+
+      - name: Rodar os exemplos
+        shell: bash
+        run: |
+          for pasta in samples/*/; do
+            echo "::group::$pasta"
+            dotnet run -c Release --no-build --project "$pasta"
+            echo "::endgroup::"
+          done
+
+      - name: Publicar resultados dos testes
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: resultados-testes-${{ matrix.os }}
+          path: testes/*.trx
+          if-no-files-found: ignore

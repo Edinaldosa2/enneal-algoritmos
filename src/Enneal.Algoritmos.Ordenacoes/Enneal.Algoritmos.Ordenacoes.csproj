@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Bubble, Quick e Merge Sort com contagem de comparações, trocas e escritas. -->
+
+  <PropertyGroup>
+    <RootNamespace>Enneal.Algoritmos.Ordenacoes</RootNamespace>
+    <AssemblyName>Enneal.Algoritmos.Ordenacoes</AssemblyName>
+    <Description>Bubble, Quick e Merge Sort com contagem de comparações, trocas e escritas.</Description>
+  </PropertyGroup>
+
+</Project>

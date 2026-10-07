@@ -1,0 +1,25 @@
+== Round 1: rede SEM defesas ==
+sem defesas: INVADIDO em 93 passos
+(caminho mais curto até o banco: 12 movimentos, marcado com *)
+   . . . . . . I . . . . . .
+   . . . . . . * * * . . . .
+   . # # . . # # # * . # # .
+   . . . . . . . . * . . . .
+   . . . # . . . . * # . . .
+   . # . . . . # * * . . # .
+   . . . . # . . * # . . . .
+   . . . . . . . * . . . . .
+   . . . . . . B * . . . . .
+
+== Round 2: rede com defesa EM CAMADAS ==
+em camadas: PROTEGIDO, 0 caminhos até o banco (48 células exploradas)
+(o = células que o invasor conseguiu alcançar)
+   o o o o o o I o o o o o o
+   o o o o o o o o o o o o o
+   o # # o o # # # o o # # o
+   o o o o o o o o o o o o o
+   # # o # # # # # # o # # #
+   # # # # . # # # # o # # #
+   # . # # # # # # # # # . #
+   # # # # # # # . # # # # #
+   . . . . . . B . . . . . .

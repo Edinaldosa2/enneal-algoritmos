@@ -1,0 +1,50 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    Testes de unidade (xUnit). Conferem os números exatos dos Reels, propriedades
+    dos algoritmos e a saída completa de cada exemplo em samples/.
+    Para rodar, na raiz do repositório:  dotnet test
+  -->
+
+  <PropertyGroup>
+    <RootNamespace>Enneal.Algoritmos.Tests</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />
+    <PackageReference Include="xunit" />
+    <PackageReference Include="xunit.runner.visualstudio" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="Xunit" />
+  </ItemGroup>
+
+  <!-- As bibliotecas de algoritmos. -->
+  <ItemGroup>
+    <ProjectReference Include="../../src/Enneal.Algoritmos.NRainhas/Enneal.Algoritmos.NRainhas.csproj" />
+    <ProjectReference Include="../../src/Enneal.Algoritmos.ForcaBruta/Enneal.Algoritmos.ForcaBruta.csproj" />
+    <ProjectReference Include="../../src/Enneal.Algoritmos.CaminhoInvasor/Enneal.Algoritmos.CaminhoInvasor.csproj" />
+    <ProjectReference Include="../../src/Enneal.Algoritmos.Ordenacoes/Enneal.Algoritmos.Ordenacoes.csproj" />
+    <ProjectReference Include="../../src/Enneal.Algoritmos.RateLimit/Enneal.Algoritmos.RateLimit.csproj" />
+    <ProjectReference Include="../../src/Enneal.Algoritmos.MenorCaminho/Enneal.Algoritmos.MenorCaminho.csproj" />
+    <ProjectReference Include="../../src/Enneal.Algoritmos.Busca/Enneal.Algoritmos.Busca.csproj" />
+  </ItemGroup>
+
+  <!-- Os exemplos: os testes rodam cada um e comparam com saida-esperada.txt. -->
+  <ItemGroup>
+    <ProjectReference Include="../../samples/n-rainhas-8x8/NRainhas.csproj" />
+    <ProjectReference Include="../../samples/n-rainhas-4x4-ate-8x8/NRainhasLongo.csproj" />
+    <ProjectReference Include="../../samples/forca-bruta-senha/ForcaBrutaSenha.csproj" />
+    <ProjectReference Include="../../samples/caminho-do-invasor/CaminhoDoInvasor.csproj" />
+    <ProjectReference Include="../../samples/corrida-de-ordenacoes/CorridaDeOrdenacoes.csproj" />
+    <ProjectReference Include="../../samples/rate-limit-token-bucket/RateLimitTokenBucket.csproj" />
+    <ProjectReference Include="../../samples/dijkstra-a-estrela/DijkstraAEstrela.csproj" />
+    <ProjectReference Include="../../samples/busca-linear-vs-binaria/BuscaLinearVsBinaria.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="../../samples/*/saida-esperada.txt" LinkBase="SaidasEsperadas" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+</Project>

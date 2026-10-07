@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Exemplo: força bruta x login protegido (simulação didática). -->
+  <!-- Para rodar: dotnet run (dentro desta pasta). -->
+
+  <PropertyGroup>
+    <AssemblyName>ForcaBrutaSenha</AssemblyName>
+    <RootNamespace>ForcaBrutaSenha</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../../src/Enneal.Algoritmos.ForcaBruta/Enneal.Algoritmos.ForcaBruta.csproj" />
+  </ItemGroup>
+
+</Project>

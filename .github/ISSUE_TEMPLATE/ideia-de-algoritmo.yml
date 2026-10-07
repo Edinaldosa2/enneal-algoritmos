@@ -1,0 +1,24 @@
+name: Ideia de algoritmo
+description: Sugira um algoritmo para virar Reel e entrar neste repositório.
+labels: ["ideia"]
+body:
+  - type: input
+    id: algoritmo
+    attributes:
+      label: Algoritmo
+      placeholder: ex.: Torre de Hanói
+    validations:
+      required: true
+  - type: textarea
+    id: porque
+    attributes:
+      label: Por que seria um bom Reel?
+      description: O que fica visual, surpreendente ou útil de aprender.
+    validations:
+      required: true
+  - type: checkboxes
+    id: seguranca
+    attributes:
+      label: Segurança
+      options:
+        - label: Se o tema for de segurança, a ideia é ensinar a DEFESA (sem ferramentas de ataque nem alvos reais).

@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Menor caminho num mapa de cidade: Dijkstra x A* (A-estrela). -->
+
+  <PropertyGroup>
+    <RootNamespace>Enneal.Algoritmos.MenorCaminho</RootNamespace>
+    <AssemblyName>Enneal.Algoritmos.MenorCaminho</AssemblyName>
+    <Description>Menor caminho num mapa de cidade: Dijkstra x A* (A-estrela), com contagem de nós explorados.</Description>
+  </PropertyGroup>
+
+</Project>

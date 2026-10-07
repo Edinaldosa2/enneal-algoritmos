@@ -1,21 +1,32 @@
 <Project>
 
   <!--
-    Configurações comuns a TODOS os projetos deste repositório.
-    O MSBuild lê este arquivo automaticamente para cada .csproj nas subpastas.
+    Configurações comuns a TODOS os projetos deste repositório
+    (src/, samples/ e tests/). O MSBuild lê este arquivo sozinho.
   -->
 
   <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
     <LangVersion>12</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
 
     <!-- Saída igual em qualquer computador (ponto como separador decimal, etc.). -->
     <InvariantGlobalization>true</InvariantGlobalization>
 
+    <Deterministic>true</Deterministic>
+    <Version>1.1.0</Version>
     <Authors>Edinaldo Sá</Authors>
     <Company>Enneal</Company>
     <Product>enneal-algoritmos</Product>
     <Copyright>Copyright (c) 2026 Edinaldo Sá / Enneal</Copyright>
     <RepositoryUrl>https://github.com/Edinaldosa2/enneal-algoritmos</RepositoryUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+
+  <!-- No GitHub Actions: build reprodutível. -->
+  <PropertyGroup Condition="'$(GITHUB_ACTIONS)' == 'true'">
+    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
   </PropertyGroup>
 
 </Project>

@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Força bruta x login protegido: simulação didática com hash PBKDF2, salt e bloqueio por falhas. -->
+
+  <PropertyGroup>
+    <RootNamespace>Enneal.Algoritmos.ForcaBruta</RootNamespace>
+    <AssemblyName>Enneal.Algoritmos.ForcaBruta</AssemblyName>
+    <Description>Força bruta x login protegido: simulação didática com hash PBKDF2, salt e bloqueio por falhas.</Description>
+  </PropertyGroup>
+
+</Project>

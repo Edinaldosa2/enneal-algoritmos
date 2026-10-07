@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- N-Rainhas com backtracking: primeira solução, contadores de tentativas e voltas, contagem de soluções. -->
+
+  <PropertyGroup>
+    <RootNamespace>Enneal.Algoritmos.NRainhas</RootNamespace>
+    <AssemblyName>Enneal.Algoritmos.NRainhas</AssemblyName>
+    <Description>N-Rainhas com backtracking: primeira solução, contadores de tentativas e voltas, contagem de soluções.</Description>
+  </PropertyGroup>
+
+</Project>

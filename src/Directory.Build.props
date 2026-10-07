@@ -1,0 +1,16 @@
+<Project>
+
+  <!-- Herda as configurações da raiz do repositório. -->
+  <Import Project="$([MSBuild]::GetPathOfFileAbove('Directory.Build.props', '$(MSBuildThisFileDirectory)../'))" />
+
+  <!--
+    Bibliotecas de algoritmos: geram documentação XML, então cada classe e
+    método público tem um comentário /// em português (aparece no IntelliSense).
+  -->
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+</Project>

@@ -1,0 +1,10 @@
+== Round 1: PIN de 4 dígitos, SEM proteção ==
+ABERTO!
+7392
+(o PIN 7391 caiu na tentativa 7392 de 10000 possíveis)
+
+== Round 2: login protegido (hash + bloqueio) ==
+bloqueado após 5 tentativas (15 min)
+(o 6º pedido já encontrou a conta bloqueada)
+
+mesmo PIN: 1478 bloqueios = 15.4 dias
