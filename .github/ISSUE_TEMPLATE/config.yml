@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Instagram da Enneal
+    url: https://www.instagram.com/enneal.it/
+    about: Reels com os algoritmos deste repositório.
+  - name: Relatar uma vulnerabilidade
+    url: https://github.com/Edinaldosa2/enneal-algoritmos/security/advisories/new
+    about: Problemas de segurança devem ser relatados em particular, não em issues públicas.

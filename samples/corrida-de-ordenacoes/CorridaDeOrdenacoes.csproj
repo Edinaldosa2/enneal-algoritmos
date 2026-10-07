@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Exemplo: corrida de ordenações (Bubble x Quick x Merge). -->
+  <!-- Para rodar: dotnet run (dentro desta pasta). -->
+
+  <PropertyGroup>
+    <AssemblyName>CorridaDeOrdenacoes</AssemblyName>
+    <RootNamespace>CorridaDeOrdenacoes</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../../src/Enneal.Algoritmos.Ordenacoes/Enneal.Algoritmos.Ordenacoes.csproj" />
+  </ItemGroup>
+
+</Project>

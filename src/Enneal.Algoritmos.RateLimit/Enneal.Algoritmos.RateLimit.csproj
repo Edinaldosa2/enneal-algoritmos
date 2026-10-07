@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Rate limit com token bucket por IP: simulação didática de uma fila de servidor sob enxurrada de requisições. -->
+
+  <PropertyGroup>
+    <RootNamespace>Enneal.Algoritmos.RateLimit</RootNamespace>
+    <AssemblyName>Enneal.Algoritmos.RateLimit</AssemblyName>
+    <Description>Rate limit com token bucket por IP: simulação didática de uma fila de servidor sob enxurrada de requisições.</Description>
+  </PropertyGroup>
+
+</Project>

@@ -1,19 +1,32 @@
-# Saídas de compilação do .NET
+# === Saídas de compilação do .NET ===
 bin/
 obj/
 [Dd]ebug/
 [Rr]elease/
-*.user
-*.suo
-*.userprefs
+*.pdb
 
-# IDEs
+# === Testes ===
+TestResults/
+testes/
+*.trx
+coverage*.xml
+
+# === IDEs ===
 .vs/
 .vscode/
 .idea/
+*.user
+*.suo
+*.userprefs
 *.swp
 
-# Sistema operacional
+# === Logs e temporários ===
+*.log
+*.tmp
+
+# === Sistema operacional ===
 .DS_Store
 Thumbs.db
+ehthumbs.db
 desktop.ini
+$RECYCLE.BIN/

@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Exemplo: N-Rainhas 8x8. -->
+  <!-- Para rodar: dotnet run (dentro desta pasta). -->
+
+  <PropertyGroup>
+    <AssemblyName>NRainhas</AssemblyName>
+    <RootNamespace>NRainhas</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../../src/Enneal.Algoritmos.NRainhas/Enneal.Algoritmos.NRainhas.csproj" />
+  </ItemGroup>
+
+</Project>

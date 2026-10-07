@@ -1,0 +1,18 @@
+<Project>
+
+  <!--
+    Gerenciamento central de pacotes NuGet: as versões ficam só aqui.
+    As bibliotecas e os exemplos não usam nenhum pacote; só os testes.
+  -->
+
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.10.1" />
+    <PackageVersion Include="xunit" Version="2.9.3" />
+    <PackageVersion Include="xunit.runner.visualstudio" Version="3.1.5" />
+  </ItemGroup>
+
+</Project>

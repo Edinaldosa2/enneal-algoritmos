@@ -1,0 +1,2 @@
+Sem rate limit: requisições 1173 | 200 ok 202 | 429 bloqueadas 0 | 503 fila cheia 851 | 408 timeout 120 | legítimos atendidos 22/84 (26%) | flood atendido 180 | ticks 36
+Com rate limit: requisições 1173 | 200 ok 268 | 429 bloqueadas 886 | 503 fila cheia 14 | 408 timeout 5 | legítimos atendidos 81/84 (96%) | flood atendido 187 | ticks 34

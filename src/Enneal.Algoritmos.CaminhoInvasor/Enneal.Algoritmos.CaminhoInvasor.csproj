@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Caminho do invasor: busca em largura (BFS) num mapa abstrato para ensinar defesa em camadas. -->
+
+  <PropertyGroup>
+    <RootNamespace>Enneal.Algoritmos.CaminhoInvasor</RootNamespace>
+    <AssemblyName>Enneal.Algoritmos.CaminhoInvasor</AssemblyName>
+    <Description>Caminho do invasor: busca em largura (BFS) num mapa abstrato para ensinar defesa em camadas.</Description>
+  </PropertyGroup>
+
+</Project>

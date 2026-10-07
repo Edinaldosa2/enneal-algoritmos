@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Exemplo: caminho do invasor (BFS e defesa em camadas). -->
+  <!-- Para rodar: dotnet run (dentro desta pasta). -->
+
+  <PropertyGroup>
+    <AssemblyName>CaminhoDoInvasor</AssemblyName>
+    <RootNamespace>CaminhoDoInvasor</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../../src/Enneal.Algoritmos.CaminhoInvasor/Enneal.Algoritmos.CaminhoInvasor.csproj" />
+  </ItemGroup>
+
+</Project>

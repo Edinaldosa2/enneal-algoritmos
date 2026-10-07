@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Exemplo: rate limit x DDoS com token bucket (simulação didática). -->
+  <!-- Para rodar: dotnet run (dentro desta pasta). -->
+
+  <PropertyGroup>
+    <AssemblyName>RateLimitTokenBucket</AssemblyName>
+    <RootNamespace>RateLimitTokenBucket</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../../src/Enneal.Algoritmos.RateLimit/Enneal.Algoritmos.RateLimit.csproj" />
+  </ItemGroup>
+
+</Project>

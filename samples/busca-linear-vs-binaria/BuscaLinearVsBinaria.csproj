@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Exemplo: busca linear x busca binária (1.024 itens e 1 milhão). -->
+  <!-- Para rodar: dotnet run (dentro desta pasta). -->
+
+  <PropertyGroup>
+    <AssemblyName>BuscaLinearVsBinaria</AssemblyName>
+    <RootNamespace>BuscaLinearVsBinaria</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../../src/Enneal.Algoritmos.Busca/Enneal.Algoritmos.Busca.csproj" />
+  </ItemGroup>
+
+</Project>

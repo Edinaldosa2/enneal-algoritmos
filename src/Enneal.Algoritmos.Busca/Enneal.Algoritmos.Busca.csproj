@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Busca linear x busca binária num vetor ordenado, contando comparações. -->
+
+  <PropertyGroup>
+    <RootNamespace>Enneal.Algoritmos.Busca</RootNamespace>
+    <AssemblyName>Enneal.Algoritmos.Busca</AssemblyName>
+    <Description>Busca linear x busca binária num vetor ordenado, com contagem de comparações.</Description>
+  </PropertyGroup>
+
+</Project>

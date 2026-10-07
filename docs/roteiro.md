@@ -1,0 +1,30 @@
+# Roteiro
+
+## Versão 1.0 — Feito
+
+- [x] N-Rainhas 8x8 e de 4x4 até 8x8
+- [x] Força bruta x login protegido
+- [x] Caminho do invasor (BFS)
+- [x] Corrida de ordenações (Bubble x Quick x Merge)
+- [x] Rate limit x DDoS (token bucket)
+
+## Versão 1.1 — Feito
+
+- [x] Bibliotecas separadas dos exemplos (`src/` e `samples/`)
+- [x] Testes com xUnit conferindo os números dos Reels
+- [x] Saída dourada de cada exemplo (`saida-esperada.txt`)
+- [x] Integração contínua no GitHub Actions
+- [x] Documentação por algoritmo com diagramas
+- [x] Dijkstra x A\* (como o GPS acha a rota)
+- [x] Busca linear x busca binária
+- [x] README em português e em inglês
+
+## Próximo Reel
+
+- [ ] Torre de Hanói (recursão)
+
+## Ideias
+
+- Visualização passo a passo no terminal (modo `--passo-a-passo`)
+- Versões em outras linguagens (Python, JavaScript)
+- Exercícios com gabarito em cada pasta

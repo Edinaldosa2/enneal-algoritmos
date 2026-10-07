@@ -1,0 +1,12 @@
+<Project>
+
+  <!-- Herda as configurações da raiz do repositório. -->
+  <Import Project="$([MSBuild]::GetPathOfFileAbove('Directory.Build.props', '$(MSBuildThisFileDirectory)../'))" />
+
+  <!-- Exemplos: programas de console que imprimem os mesmos números dos Reels. -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+</Project>

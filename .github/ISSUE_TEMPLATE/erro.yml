@@ -1,0 +1,45 @@
+name: Erro
+description: Algo não funciona, um número não bate com o Reel ou a explicação está errada.
+labels: ["erro"]
+body:
+  - type: dropdown
+    id: algoritmo
+    attributes:
+      label: Algoritmo
+      options:
+        - N-Rainhas
+        - Força bruta x login protegido
+        - Caminho do invasor
+        - Corrida de ordenações
+        - Rate limit x DDoS
+        - Dijkstra x A*
+        - Busca linear x binária
+        - Outro / geral
+    validations:
+      required: true
+  - type: textarea
+    id: descricao
+    attributes:
+      label: O que aconteceu?
+      description: O que você esperava e o que aconteceu de verdade.
+    validations:
+      required: true
+  - type: textarea
+    id: passos
+    attributes:
+      label: Como reproduzir
+      description: Comandos que você rodou e a saída (cole como texto).
+      render: shell
+  - type: input
+    id: dotnet
+    attributes:
+      label: Versão do .NET
+      description: Saída de `dotnet --version`.
+  - type: dropdown
+    id: sistema
+    attributes:
+      label: Sistema
+      options:
+        - Windows
+        - Linux
+        - macOS

@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Exemplo: como o GPS acha a rota, Dijkstra x A* (A-estrela). -->
+  <!-- Para rodar: dotnet run (dentro desta pasta). -->
+
+  <PropertyGroup>
+    <AssemblyName>DijkstraAEstrela</AssemblyName>
+    <RootNamespace>DijkstraAEstrela</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../../src/Enneal.Algoritmos.MenorCaminho/Enneal.Algoritmos.MenorCaminho.csproj" />
+  </ItemGroup>
+
+</Project>
