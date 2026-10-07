@@ -23,6 +23,7 @@ public class SaidaDosExemplosTests
     [InlineData("RateLimitTokenBucket", "rate-limit-token-bucket")]
     [InlineData("DijkstraAEstrela", "dijkstra-a-estrela")]
     [InlineData("BuscaLinearVsBinaria", "busca-linear-vs-binaria")]
+    [InlineData("TorreDeHanoi", "torre-de-hanoi")]
     public void SaidaDoExemplo_IgualAoArquivoEsperado(string assembly, string pasta)
     {
         string esperado = File.ReadAllText(Path.Combine(AppContext.BaseDirectory, "SaidasEsperadas", pasta, "saida-esperada.txt"));
@@ -52,6 +53,19 @@ public class SaidaDosExemplosTests
         // 7 + 10 + 613 + 10 + 1024 + 11 comparações, mais as 5 linhas do relatório.
         Assert.Equal(1675 + 5, linhas.Length);
         Assert.Equal("R1 L 1 5 19", linhas[0]);
+    }
+
+    [Fact]
+    public void TorreDeHanoi_ComMovimentos_ImprimeCadaMovimentoDasTresRodadas()
+    {
+        string saida = RodarExemplo("TorreDeHanoi", "--movimentos");
+        string[] linhas = Normalizar(saida).TrimEnd('\n').Split('\n');
+
+        // 7 + 15 + 63 movimentos, mais as 5 linhas do relatório (uma por rodada logo depois dos movimentos dela).
+        Assert.Equal(85 + 5, linhas.Length);
+        Assert.Equal("H3 1 1 A C", linhas[0]);
+        Assert.Equal("3 discos: 7 movimentos = 2^3 - 1 = 7", linhas[7]);
+        Assert.StartsWith("a 1 movimento por segundo: ", linhas[^1]);
     }
 
     private static string RodarExemplo(string assembly, params string[] argumentos)

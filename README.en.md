@@ -41,6 +41,7 @@ command, and **tests** that guarantee the numbers match the Reel. The code, comm
 | **Rate limit vs DDoS** | per-IP token bucket | legitimate requests served: 26% → 96%; 886 rejected (429) | [`rate-limit-token-bucket`](samples/rate-limit-token-bucket) |
 | **Dijkstra vs A\*** | shortest path (how GPS finds a route) | cost 18; 89 vs 27 nodes explored (70% fewer) | [`dijkstra-a-estrela`](samples/dijkstra-a-estrela) |
 | **Linear vs binary search** | searching a sorted array | 1,024 items: up to 1,024 vs up to 11; 1 million: 1,000,000 vs 20 | [`busca-linear-vs-binaria`](samples/busca-linear-vs-binaria) |
+| **Tower of Hanoi** | recursion, 2ⁿ − 1 moves | 3 disks: 7; 4: 15; 6: 63; 64 disks: 18,446,744,073,709,551,615 | [`torre-de-hanoi`](samples/torre-de-hanoi) |
 
 Detailed pages (diagram, complexity, the code from the Reel, exercises) live in [`docs/algoritmos/`](docs/algoritmos).
 

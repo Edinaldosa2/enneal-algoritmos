@@ -29,6 +29,7 @@
     <ProjectReference Include="../../src/Enneal.Algoritmos.RateLimit/Enneal.Algoritmos.RateLimit.csproj" />
     <ProjectReference Include="../../src/Enneal.Algoritmos.MenorCaminho/Enneal.Algoritmos.MenorCaminho.csproj" />
     <ProjectReference Include="../../src/Enneal.Algoritmos.Busca/Enneal.Algoritmos.Busca.csproj" />
+    <ProjectReference Include="../../src/Enneal.Algoritmos.TorreHanoi/Enneal.Algoritmos.TorreHanoi.csproj" />
   </ItemGroup>
 
   <!-- Os exemplos: os testes rodam cada um e comparam com saida-esperada.txt. -->
@@ -41,6 +42,7 @@
     <ProjectReference Include="../../samples/rate-limit-token-bucket/RateLimitTokenBucket.csproj" />
     <ProjectReference Include="../../samples/dijkstra-a-estrela/DijkstraAEstrela.csproj" />
     <ProjectReference Include="../../samples/busca-linear-vs-binaria/BuscaLinearVsBinaria.csproj" />
+    <ProjectReference Include="../../samples/torre-de-hanoi/TorreDeHanoi.csproj" />
   </ItemGroup>
 
   <ItemGroup>

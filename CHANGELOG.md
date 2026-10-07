@@ -5,6 +5,19 @@ Todas as mudanças importantes deste repositório ficam registradas aqui.
 O formato segue o [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) e as versões seguem o
 [Versionamento Semântico](https://semver.org/lang/pt-BR/).
 
+## 1.2.0 - 2026-10-07
+
+### Adicionado
+
+- Novo algoritmo: **Torre de Hanói** (recursão). Biblioteca `Enneal.Algoritmos.TorreHanoi` com `ResolvedorHanoi`
+  (a recursão do Reel), `Pinos` (três pilhas que recusam um disco maior sobre um menor) e `ContaDeHanoi`
+  (2ⁿ − 1 movimentos e os anos a 1 movimento por segundo, com `UInt128`).
+- Exemplo `samples/torre-de-hanoi`: 3 discos = 7 movimentos, 4 = 15, 6 = 63 e 64 discos =
+  18.446.744.073.709.551.615 movimentos (≈ 584.542.046.090 anos); `--movimentos` imprime cada movimento.
+- Testes da Torre de Hanói: números do Reel, 2ⁿ − 1 e a recorrência T(n) = 2 · T(n − 1) + 1, nenhum disco maior
+  sobre um menor, quantas vezes cada disco se move e a saída do exemplo.
+- Página `docs/algoritmos/torre-de-hanoi.md` com o diagrama da recursão e a árvore de chamadas com 3 discos.
+
 ## 1.1.0 - 2026-10-07
 
 ### Adicionado

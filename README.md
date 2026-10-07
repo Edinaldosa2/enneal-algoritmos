@@ -41,18 +41,26 @@ comando e **testes** que garantem que os números são exatamente os do Reel.
 | **Rate limit x DDoS** | token bucket por IP | legítimos atendidos: 26% → 96%; 886 bloqueadas (429) | [`rate-limit-token-bucket`](samples/rate-limit-token-bucket) | [docs](docs/algoritmos/rate-limit-token-bucket.md) |
 | **Dijkstra x A\*** | menor caminho, como o GPS acha a rota | custo 18; 89 nós x 27 nós (70% menos) | [`dijkstra-a-estrela`](samples/dijkstra-a-estrela) | [docs](docs/algoritmos/dijkstra-a-estrela.md) |
 | **Busca linear x binária** | busca em vetor ordenado | 1.024 itens: até 1.024 x até 11; 1 milhão: 1.000.000 x 20 | [`busca-linear-vs-binaria`](samples/busca-linear-vs-binaria) | [docs](docs/algoritmos/busca-linear-vs-binaria.md) |
+| **Torre de Hanói** | recursão, 2ⁿ − 1 movimentos | 3 discos: 7; 4: 15; 6: 63; 64 discos: 18.446.744.073.709.551.615 | [`torre-de-hanoi`](samples/torre-de-hanoi) | [docs](docs/algoritmos/torre-de-hanoi.md) |
 
 Novos algoritmos entram aqui conforme os Reels forem saindo. Veja o [roteiro](docs/roteiro.md).
 
 ---
 
-## Novidades na v1.1.0
+## Novidades na v1.2.0
+
+| Área | Atualização |
+|------|-------------|
+| **Novo Reel** | Torre de Hanói: recursão, 2ⁿ − 1 movimentos e a conta exata dos 64 discos com `UInt128` |
+| **Testes** | 190 testes xUnit, incluindo propriedades da Torre de Hanói (2ⁿ − 1 e nunca um disco maior sobre um menor) |
+
+### v1.1.0
 
 | Área | Atualização |
 |------|-------------|
 | **Bibliotecas** | cada algoritmo virou uma biblioteca em `src/`, sem `Console`, devolvendo resultados e contadores |
 | **Exemplos** | um programa de console por Reel em `samples/`, com a saída esperada ao lado |
-| **Testes** | 149 testes xUnit: números exatos dos Reels, propriedades dos algoritmos e saída de cada exemplo |
+| **Testes** | testes xUnit: números exatos dos Reels, propriedades dos algoritmos e saída de cada exemplo |
 | **Novos Reels** | Dijkstra x A\* e busca linear x binária |
 | **CI** | GitHub Actions compila sem avisos, roda os testes e todos os exemplos a cada push |
 | **Documentação** | uma página por algoritmo com diagrama, complexidade, código do Reel e exercícios |
@@ -64,7 +72,7 @@ Histórico completo no [CHANGELOG](CHANGELOG.md).
 ## Sumário
 
 - [Algoritmos](#algoritmos)
-- [Novidades na v1.1.0](#novidades-na-v110)
+- [Novidades na v1.2.0](#novidades-na-v120)
 - [Como rodar](#como-rodar)
 - [Usando as bibliotecas](#usando-as-bibliotecas)
 - [Testes](#testes)
@@ -100,6 +108,7 @@ dotnet run --project samples/corrida-de-ordenacoes
 dotnet run --project samples/rate-limit-token-bucket
 dotnet run --project samples/dijkstra-a-estrela
 dotnet run --project samples/busca-linear-vs-binaria
+dotnet run --project samples/torre-de-hanoi
 ```
 
 Saída do primeiro:
@@ -144,8 +153,8 @@ dotnet test
 
 | Grupo | O que confere |
 |-------|---------------|
-| Números dos Reels | cada contador mostrado nos vídeos (876/105, 7.392, 93/48, 185/235/536, 26%/96%/886, 18/89/27, 7/10, 613/10, 1.024/11, 20) |
-| Propriedades | soluções das N rainhas são válidas (e o 8x8 tem 92), as ordenações batem com o `Order()` do .NET, trocas do Bubble = inversões, A\* acha o mesmo custo que Dijkstra, binária nunca passa de ⌊log₂ n⌋ + 1 comparações |
+| Números dos Reels | cada contador mostrado nos vídeos (876/105, 7.392, 93/48, 185/235/536, 26%/96%/886, 18/89/27, 7/10, 613/10, 1.024/11, 20, 7/15/63, 2⁶⁴ − 1) |
+| Propriedades | soluções das N rainhas são válidas (e o 8x8 tem 92), as ordenações batem com o `Order()` do .NET, trocas do Bubble = inversões, A\* acha o mesmo custo que Dijkstra, binária nunca passa de ⌊log₂ n⌋ + 1 comparações, a Torre de Hanói faz sempre 2ⁿ − 1 movimentos e nunca põe um disco maior sobre um menor |
 | Defesas | login aceita a senha certa, bloqueia após 5 falhas, o bloqueio vence em 15 minutos, cada conta tem o seu salt; o token bucket respeita rajada e taxa |
 | Saída dos exemplos | cada programa de `samples/` é executado e comparado, caractere por caractere, com o `saida-esperada.txt` |
 
@@ -162,7 +171,8 @@ enneal-algoritmos/
 │   ├── Enneal.Algoritmos.Ordenacoes/
 │   ├── Enneal.Algoritmos.RateLimit/
 │   ├── Enneal.Algoritmos.MenorCaminho/
-│   └── Enneal.Algoritmos.Busca/
+│   ├── Enneal.Algoritmos.Busca/
+│   └── Enneal.Algoritmos.TorreHanoi/
 ├── samples/                    Um programa de console por Reel (+ saida-esperada.txt)
 ├── tests/                      Enneal.Algoritmos.Tests (xUnit)
 ├── docs/                       Arquitetura, segurança didática, roteiro e uma página por algoritmo

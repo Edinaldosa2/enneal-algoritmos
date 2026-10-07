@@ -19,9 +19,13 @@
 - [x] Busca linear x busca binária
 - [x] README em português e em inglês
 
-## Próximo Reel
+## Versão 1.2 — Feito
 
-- [ ] Torre de Hanói (recursão)
+- [x] Torre de Hanói (recursão)
+
+## Próximos Reels
+
+- Tem uma ideia? Abra uma issue com o modelo **Ideia de algoritmo**.
 
 ## Ideias
 

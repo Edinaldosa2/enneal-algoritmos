@@ -18,6 +18,8 @@ gh repo edit $repo `
     --add-topic bfs `
     --add-topic sorting-algorithms `
     --add-topic binary-search `
+    --add-topic recursion `
+    --add-topic tower-of-hanoi `
     --add-topic rate-limiting `
     --add-topic seguranca `
     --add-topic educacao `

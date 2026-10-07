@@ -55,7 +55,7 @@ Cada algoritmo segue o mesmo padrão (veja `Enneal.Algoritmos.Busca` como modelo
    (e o mesmo para `samples`).
 5. **Documentação:** `docs/algoritmos/<nome>.md` (o que faz, diagrama, código do Reel, complexidade, números do Reel,
    uso da biblioteca, exercícios e, se for de segurança, **Como se defender**), uma linha na tabela do `README.md` e
-   do `README.en.md`, a pasta no laço do `.github/workflows/ci.yml` e uma entrada no `CHANGELOG.md`.
+   do `README.en.md`, confira que o laço do `.github/workflows/ci.yml` roda o novo exemplo (ele percorre todas as pastas de `samples/`) e uma entrada no `CHANGELOG.md`.
 
 ## Pull requests
 

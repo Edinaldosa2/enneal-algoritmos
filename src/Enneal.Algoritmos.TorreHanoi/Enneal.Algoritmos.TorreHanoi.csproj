@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Torre de Hanói: a recursão que move n discos em 2^n - 1 movimentos. -->
+
+  <PropertyGroup>
+    <RootNamespace>Enneal.Algoritmos.TorreHanoi</RootNamespace>
+    <AssemblyName>Enneal.Algoritmos.TorreHanoi</AssemblyName>
+    <Description>Torre de Hanói recursiva, com contagem de movimentos e a conta exata dos 64 discos (UInt128).</Description>
+  </PropertyGroup>
+
+</Project>

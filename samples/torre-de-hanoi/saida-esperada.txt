@@ -1,0 +1,5 @@
+3 discos: 7 movimentos = 2^3 - 1 = 7
+4 discos: 15 movimentos = 2^4 - 1 = 15
+6 discos: 63 movimentos = 2^6 - 1 = 63
+64 discos = 18.446.744.073.709.551.615 movimentos
+a 1 movimento por segundo: 584.542.046.090 anos (≈ 585 bilhões de anos)
