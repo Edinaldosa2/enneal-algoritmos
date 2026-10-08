@@ -63,12 +63,28 @@ Detailed pages (diagram, complexity, the code from the Reel, exercises) live in 
 ## Quick start
 
 1. Install the [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0) (free; Windows, Linux or macOS).
-2. Clone and run any sample:
+2. Clone the repo and run the sample for the Reel you saw (one folder per Reel, including `samples/caminho-do-invasor`):
 
 ```bash
 git clone https://github.com/Edinaldosa2/enneal-algoritmos.git
 cd enneal-algoritmos
+dotnet run --project samples/n-rainhas-8x8
+dotnet run --project samples/n-rainhas-4x4-ate-8x8
+dotnet run --project samples/forca-bruta-senha
+dotnet run --project samples/caminho-do-invasor
+dotnet run --project samples/corrida-de-ordenacoes
+dotnet run --project samples/rate-limit-token-bucket
 dotnet run --project samples/dijkstra-a-estrela
+dotnet run --project samples/busca-linear-vs-binaria
+dotnet run --project samples/torre-de-hanoi
+dotnet run --project samples/nota-do-https
+dotnet run --project samples/cabecalhos-de-seguranca
+dotnet run --project samples/url-maliciosa
+dotnet run --project samples/triagem-cvss-epss-kev
+dotnet run --project samples/rotas-esquecidas
+dotnet run --project samples/idor-checagem-de-dono
+dotnet run --project samples/comparacao-tempo-constante
+dotnet run --project samples/jwt-validacao
 ```
 
 3. Run the tests:
