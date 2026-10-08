@@ -2,7 +2,8 @@
 
   <!--
     Gerenciamento central de pacotes NuGet: as versões ficam só aqui.
-    As bibliotecas e os exemplos não usam nenhum pacote; só os testes.
+    Só os testes e o exemplo de JWT usam pacotes. O JWT usa o pacote oficial da Microsoft para validar
+    tokens no ASP.NET Core (o assunto do Reel é justamente configurá-lo direito).
   -->
 
   <PropertyGroup>
@@ -10,6 +11,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageVersion Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.11" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.10.1" />
     <PackageVersion Include="xunit" Version="2.9.3" />
     <PackageVersion Include="xunit.runner.visualstudio" Version="3.1.5" />

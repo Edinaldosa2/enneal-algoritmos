@@ -21,6 +21,8 @@ body:
         - CVSS alto ≠ explorada (CVSS x EPSS x KEV)
         - Rotas esquecidas
         - IDOR: checagem de dono
+        - Comparação em tempo constante
+        - JWT do jeito certo
         - Outro / geral
     validations:
       required: true

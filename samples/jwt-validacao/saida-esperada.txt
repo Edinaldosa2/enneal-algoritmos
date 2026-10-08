@@ -1,0 +1,8 @@
+Chave fraca "segredo123": recusada (80 bits, IDX10653: mínimo 128)
+Token 0 original (cliente): API frouxa 403 | API certa 403
+Token 1 role editado + alg none: API frouxa 200 | API certa 401
+Token 2 role editado, assinatura antiga: API frouxa 401 | API certa 401
+Token 3 admin de outra API (aud): API frouxa 200 | API certa 401
+Token 4 admin vencido (exp): API frouxa 200 | API certa 401
+Token 5 admin de verdade: API frouxa 200 | API certa 200
+Resumo: tokens ruins aceitos (200): API frouxa 3 de 4, API certa 0 de 4

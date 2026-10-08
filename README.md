@@ -53,6 +53,8 @@ comando e **testes** que garantem que os números são exatamente os do Reel.
 | **CVSS alto ≠ explorada** | triagem CVSS x EPSS x KEV | exploradas em #9, #10, #24 → #1, #2, #3; P1 3, P2 5 | [`triagem-cvss-epss-kev`](samples/triagem-cvss-epss-kev) | [docs](docs/algoritmos/triagem-cvss-epss-kev.md) |
 | **Rotas esquecidas** | auditoria das suas rotas, negar por padrão | 15 conferidas: 1 exposta (`/.git/config`) → 0 | [`rotas-esquecidas`](samples/rotas-esquecidas) | [docs](docs/algoritmos/rotas-esquecidas.md) |
 | **IDOR: checagem de dono** | controle de acesso quebrado (OWASP A01) | 4 pedidos de outras pessoas vazados → 0 (403) | [`idor-checagem-de-dono`](samples/idor-checagem-de-dono) | [docs](docs/algoritmos/idor-checagem-de-dono.md) |
+| **Comparação em tempo constante** | `==` x `FixedTimeEquals` (modelo de custo) | custos 1, 4, 2, 6, 3, 6 → 6 em todos; mesma resposta em 6/6 | [`comparacao-tempo-constante`](samples/comparacao-tempo-constante) | [docs](docs/algoritmos/comparacao-tempo-constante.md) |
+| **JWT do jeito certo** | JwtBearer no ASP.NET Core 8: frouxo x certo | tokens ruins aceitos: frouxa 3 de 4, certa 0 de 4 | [`jwt-validacao`](samples/jwt-validacao) | [docs](docs/algoritmos/jwt-validacao.md) |
 
 Novos algoritmos entram aqui conforme os Reels forem saindo. Veja o [roteiro](docs/roteiro.md).
 
@@ -62,10 +64,10 @@ Novos algoritmos entram aqui conforme os Reels forem saindo. Veja o [roteiro](do
 
 | Área | Atualização |
 |------|-------------|
-| **6 Reels de segurança defensiva** | nota do HTTPS, cabeçalhos de segurança, URL maliciosa, triagem CVSS x EPSS x KEV, rotas esquecidas e IDOR |
+| **8 Reels de segurança defensiva** | nota do HTTPS, cabeçalhos de segurança, URL maliciosa, triagem CVSS x EPSS x KEV, rotas esquecidas, IDOR, comparação em tempo constante e JWT |
 | **ASP.NET Core 8** | cabeçalhos e minimal API com o ASP.NET Core que já vem no SDK (`FrameworkReference`, sem pacote NuGet) |
 | **Dados públicos** | fila de 400 CVEs (NVD, FIRST EPSS, CISA KEV) e o modelo ONNX do notebook, com fonte e licença |
-| **Testes** | 349 testes xUnit, incluindo o laboratório TLS de ponta a ponta e a paridade com o notebook da URL |
+| **Testes** | 375 testes xUnit, incluindo o laboratório TLS e as duas APIs JWT de ponta a ponta e a paridade com o notebook da URL |
 
 ### v1.2.0
 
@@ -135,6 +137,8 @@ dotnet run --project samples/url-maliciosa
 dotnet run --project samples/triagem-cvss-epss-kev
 dotnet run --project samples/rotas-esquecidas
 dotnet run --project samples/idor-checagem-de-dono
+dotnet run --project samples/comparacao-tempo-constante
+dotnet run --project samples/jwt-validacao
 ```
 
 Saída do primeiro:
@@ -179,9 +183,9 @@ dotnet test
 
 | Grupo | O que confere |
 |-------|---------------|
-| Números dos Reels | cada contador mostrado nos vídeos (876/105, 7.392, 93/48, 185/235/536, 26%/96%/886, 18/89/27, 7/10, 613/10, 1.024/11, 20, 7/15/63, 2⁶⁴ − 1, e as notas, pontos, probabilidades e posições dos 6 Reels de segurança) |
+| Números dos Reels | cada contador mostrado nos vídeos (876/105, 7.392, 93/48, 185/235/536, 26%/96%/886, 18/89/27, 7/10, 613/10, 1.024/11, 20, 7/15/63, 2⁶⁴ − 1, e as notas, pontos, probabilidades, posições, custos e status dos 8 Reels de segurança) |
 | Propriedades | soluções das N rainhas são válidas (e o 8x8 tem 92), as ordenações batem com o `Order()` do .NET, trocas do Bubble = inversões, A\* acha o mesmo custo que Dijkstra, binária nunca passa de ⌊log₂ n⌋ + 1 comparações, a Torre de Hanói faz sempre 2ⁿ − 1 movimentos e nunca põe um disco maior sobre um menor |
-| Defesas | login aceita a senha certa, bloqueia após 5 falhas, o bloqueio vence em 15 minutos, cada conta tem o seu salt; o token bucket respeita rajada e taxa; a checagem de dono nunca vaza pedido de outra pessoa; negar por padrão não expõe rota fora da lista; a fila triada põe toda CVE da KEV antes das outras; cada teto de nota é aplicado |
+| Defesas | login aceita a senha certa, bloqueia após 5 falhas, o bloqueio vence em 15 minutos, cada conta tem o seu salt; o token bucket respeita rajada e taxa; a checagem de dono nunca vaza pedido de outra pessoa; negar por padrão não expõe rota fora da lista; a fila triada põe toda CVE da KEV antes das outras; cada teto de nota é aplicado; o laço que sai cedo vaza o prefixo e o `FixedTimeEquals` custa sempre o tamanho; a API certa recusa token sem assinatura, editado, de outra audience ou vencido |
 | Paridade com os notebooks | a triagem bate com o risco e a faixa das 400 CVEs do notebook; as 30 pistas e a probabilidade da URL batem com os 9 casos salvos pelo ONNX Runtime |
 | Saída dos exemplos | cada programa de `samples/` é executado e comparado, caractere por caractere, com o `saida-esperada.txt` |
 
@@ -205,7 +209,9 @@ enneal-algoritmos/
 │   ├── Enneal.Algoritmos.UrlMaliciosa/
 │   ├── Enneal.Algoritmos.TriagemVulnerabilidades/
 │   ├── Enneal.Algoritmos.RotasEsquecidas/
-│   └── Enneal.Algoritmos.ControleDeAcesso/
+│   ├── Enneal.Algoritmos.ControleDeAcesso/
+│   ├── Enneal.Algoritmos.ComparacaoSegura/
+│   └── Enneal.Algoritmos.ValidacaoJwt/
 ├── samples/                    Um programa de console por Reel (+ saida-esperada.txt)
 ├── tests/                      Enneal.Algoritmos.Tests (xUnit)
 ├── docs/                       Arquitetura, segurança didática, roteiro e uma página por algoritmo
@@ -242,10 +248,10 @@ locais.
 
 | Regra | Como funciona |
 |-------|---------------|
-| Nada sai da máquina | nenhum exemplo acessa a internet, lê arquivos de senha ou outro sistema; os únicos sockets (TLS e a minimal API da URL) ficam em `127.0.0.1`, dentro do próprio processo |
+| Nada sai da máquina | nenhum exemplo acessa a internet, lê arquivos de senha ou outro sistema; os únicos sockets (TLS, a minimal API da URL e as APIs do JWT) ficam em `127.0.0.1`, dentro do próprio processo |
 | Alvo de brinquedo | o "alvo" é uma variável, um mapa em texto, uma tabela de rotas ou uma lista de objetos do próprio programa |
 | Nomes fictícios | hosts `.example`/`.invalid` e IPs de documentação (RFC 2606 e RFC 5737); pessoas e documentos inventados |
-| Escopo mínimo | a força bruta só aceita PIN de 4 dígitos e só "ataca" um login criado no mesmo processo |
+| Escopo mínimo | a força bruta só aceita PIN de 4 dígitos e só "ataca" um login criado no mesmo processo; tokens e chaves são de demonstração |
 | Defesa primeiro | todo exemplo de segurança mostra a defesa funcionando e tem a seção **Como se defender** |
 
 Veja [docs/seguranca-didatica.md](docs/seguranca-didatica.md) e [SECURITY.md](SECURITY.md).
@@ -260,8 +266,10 @@ Veja [docs/seguranca-didatica.md](docs/seguranca-didatica.md) e [SECURITY.md](SE
 | Sistema | Windows, Linux ou macOS |
 | Editor (opcional) | Visual Studio 2022, Rider ou VS Code com C# Dev Kit |
 
-Nenhum pacote externo nas bibliotecas e nos exemplos. Os exemplos de cabeçalhos e da URL usam o ASP.NET Core 8, que
-já vem no .NET 8 SDK (`FrameworkReference`). Os testes usam xUnit (baixado pelo `dotnet test`).
+Nenhum pacote externo nas bibliotecas e nos exemplos, com uma exceção: o exemplo de JWT usa o pacote oficial da
+Microsoft `Microsoft.AspNetCore.Authentication.JwtBearer` (configurá-lo direito é o assunto do Reel). Os exemplos de
+cabeçalhos, URL e JWT usam o ASP.NET Core 8, que já vem no .NET 8 SDK (`FrameworkReference`). Os testes usam xUnit.
+Os pacotes são baixados pelo `dotnet build`/`dotnet test`.
 
 ---
 

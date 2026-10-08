@@ -9,7 +9,7 @@ O formato segue o [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) e 
 
 ### Adicionado
 
-- Seis exemplos de **segurança defensiva**, cada um com biblioteca, exemplo com `saida-esperada.txt`, testes e
+- Oito exemplos de **segurança defensiva**, cada um com biblioteca, exemplo com `saida-esperada.txt`, testes e
   página em `docs/algoritmos/` com a seção **Como se defender** e o link do notebook no Kaggle quando existe:
   - **Nota do HTTPS** (`Enneal.Algoritmos.NotaTls`, `samples/nota-do-https`): verificador DNS → TCP → TLS →
     certificado → HTTP com `SslStream` e `X509Chain`, num laboratório de servidores TLS em `127.0.0.1` com
@@ -28,11 +28,21 @@ O formato segue o [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) e 
     próprio site e a correção "negar por padrão" sem listagem de diretório.
   - **IDOR: checagem de dono** (`Enneal.Algoritmos.ControleDeAcesso`, `samples/idor-checagem-de-dono`): o teste
     de acesso que pega controle de acesso quebrado e a correção que responde 403.
+  - **Comparação em tempo constante** (`Enneal.Algoritmos.ComparacaoSegura`, `samples/comparacao-tempo-constante`):
+    o laço que sai no primeiro caractere diferente x `CryptographicOperations.FixedTimeEquals`, com um modelo de
+    custo determinístico (comparações de caractere) conferido contra o `FixedTimeEquals` real.
+  - **JWT do jeito certo** (`Enneal.Algoritmos.ValidacaoJwt`, `samples/jwt-validacao`): os mesmos 6 tokens HS256
+    em duas APIs ASP.NET Core 8 em `127.0.0.1` (validação frouxa x certa, com JwtBearer), a chave fraca recusada
+    pelo .NET e os testes negativos que a API precisa recusar. A validade é conferida num relógio fixo só no
+    teste (`CertaNoRelogio`); a configuração de produção (`Certa`) usa o relógio do servidor.
 - Dados com fonte e licença: `dados/remediation_queue_demo.csv` (NVD, FIRST EPSS, CISA KEV 2026.10.02) e
   `modelo/url_model.onnx` + `model_meta.json` (treinado num dataset CC0), embutidos nas DLLs.
 - Testes de paridade: a triagem bate com o risco e a faixa das 400 CVEs do notebook; as pistas e a probabilidade
   da URL batem com os 9 casos salvos pelo ONNX Runtime (`Dados/paridade_notebook.json`).
-- Opções de detalhe nos exemplos: `--camadas`, `--cabecalhos`, `--pistas`, `--fila`, `--rotas` e `--requisicoes`.
+- Opções de detalhe nos exemplos: `--camadas`, `--cabecalhos`, `--pistas`, `--fila`, `--rotas`, `--requisicoes`,
+  `--comparacoes` e `--tokens`.
+- Primeiro pacote fora dos testes: `Microsoft.AspNetCore.Authentication.JwtBearer` 8.0.11 (oficial da Microsoft),
+  só na biblioteca de JWT, com a versão em `Directory.Packages.props`.
 
 ### Alterado
 

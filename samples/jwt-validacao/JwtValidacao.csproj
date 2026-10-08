@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Exemplo: os mesmos 6 tokens em duas APIs ASP.NET Core 8 locais (127.0.0.1), a frouxa e a certa. -->
+  <!-- Para rodar: dotnet run (dentro desta pasta). -->
+
+  <PropertyGroup>
+    <AssemblyName>JwtValidacao</AssemblyName>
+    <RootNamespace>JwtValidacao</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../../src/Enneal.Algoritmos.ValidacaoJwt/Enneal.Algoritmos.ValidacaoJwt.csproj" />
+  </ItemGroup>
+
+</Project>

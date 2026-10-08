@@ -6,7 +6,7 @@ Este é um repositório **educativo**. Os exemplos de segurança são simulaçõ
 sistema e laboratórios locais que mostram por que as defesas funcionam:
 
 - nada sai da máquina: nenhum exemplo acessa a internet, lê arquivos de senha ou acessa outro sistema; os únicos
-  sockets (laboratório TLS e minimal API da URL) escutam em `127.0.0.1`, dentro do próprio processo;
+  sockets (laboratório TLS, minimal API da URL e APIs do JWT) escutam em `127.0.0.1`, dentro do próprio processo;
 - o "alvo" é sempre uma variável, um mapa em texto, uma tabela de rotas, uma lista de objetos ou um servidor criado
   pelo próprio programa, com nomes fictícios (`.example`, `.invalid`);
 - a força bruta só aceita um PIN de 4 dígitos e só "ataca" um login criado no mesmo processo.

@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Comparação em tempo constante: o laço que sai cedo x CryptographicOperations.FixedTimeEquals. -->
+
+  <PropertyGroup>
+    <RootNamespace>Enneal.Algoritmos.ComparacaoSegura</RootNamespace>
+    <AssemblyName>Enneal.Algoritmos.ComparacaoSegura</AssemblyName>
+    <Description>Por que comparar segredo com == é bug: o laço que sai no primeiro caractere diferente x FixedTimeEquals, com um modelo de custo determinístico.</Description>
+  </PropertyGroup>
+
+</Project>

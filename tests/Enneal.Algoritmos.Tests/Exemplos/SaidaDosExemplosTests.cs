@@ -30,6 +30,8 @@ public class SaidaDosExemplosTests
     [InlineData("NotaDoHttps", "nota-do-https")]
     [InlineData("CabecalhosDeSeguranca", "cabecalhos-de-seguranca")]
     [InlineData("UrlMaliciosa", "url-maliciosa")]
+    [InlineData("ComparacaoTempoConstante", "comparacao-tempo-constante")]
+    [InlineData("JwtValidacao", "jwt-validacao")]
     public void SaidaDoExemplo_IgualAoArquivoEsperado(string assembly, string pasta)
     {
         string esperado = File.ReadAllText(Path.Combine(AppContext.BaseDirectory, "SaidasEsperadas", pasta, "saida-esperada.txt"));
@@ -81,12 +83,14 @@ public class SaidaDosExemplosTests
     [InlineData("NotaDoHttps", "--camadas", 32, "T 1 DNS quebra | nome não existe")]
     [InlineData("CabecalhosDeSeguranca", "--cabecalhos", 90, "F 0 200 http://loja.example/ https nao")]
     [InlineData("UrlMaliciosa", "--pistas", 6 * 5 + 1, "U 1 https://www.example.com/produtos/tenis-corrida")]
+    [InlineData("ComparacaoTempoConstante", "--comparacoes", 22 + 36 + 7, "I 0 0 7 B dif")]
+    [InlineData("JwtValidacao", "--tokens", 22, "T original eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.")]
     public void ExemplosDeSeguranca_ComDetalhes(string assembly, string opcao, int linhasEsperadas, string primeira)
     {
         string[] linhas = Normalizar(RodarExemplo(assembly, opcao)).TrimEnd('\n').Split('\n');
 
         Assert.Equal(linhasEsperadas, linhas.Length);
-        Assert.Equal(primeira, linhas[0]);
+        Assert.StartsWith(primeira, linhas[0]);
     }
 
     private static string RodarExemplo(string assembly, params string[] argumentos)

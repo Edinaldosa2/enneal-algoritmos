@@ -33,6 +33,8 @@ Segurança defensiva:
 - [x] CVSS alto ≠ explorada (triagem CVSS x EPSS x KEV)
 - [x] Rotas esquecidas (auditoria e negar por padrão)
 - [x] IDOR: checagem de dono
+- [x] Comparação em tempo constante (`FixedTimeEquals`)
+- [x] Validando JWT do jeito certo (JwtBearer)
 
 ## Próximos Reels
 
