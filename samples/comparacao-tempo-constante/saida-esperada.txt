@@ -1,0 +1,7 @@
+Candidato 1 B04E21: prefixo igual 0 | sai cedo: custo 1 -> false | FixedTimeEquals: custo 6 -> false
+Candidato 2 7F3D58: prefixo igual 3 | sai cedo: custo 4 -> false | FixedTimeEquals: custo 6 -> false
+Candidato 3 7A0B6E: prefixo igual 1 | sai cedo: custo 2 -> false | FixedTimeEquals: custo 6 -> false
+Candidato 4 7F3A92: prefixo igual 5 | sai cedo: custo 6 -> false | FixedTimeEquals: custo 6 -> false
+Candidato 5 7F1C07: prefixo igual 2 | sai cedo: custo 3 -> false | FixedTimeEquals: custo 6 -> false
+Candidato 6 7F3A9C: prefixo igual 6 | sai cedo: custo 6 -> true | FixedTimeEquals: custo 6 -> true
+Resumo: sai cedo [1, 4, 2, 6, 3, 6] | tempo constante [6, 6, 6, 6, 6, 6] | mesma resposta em 6/6

@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Validando JWT do jeito certo no ASP.NET Core 8: a configuração frouxa x a certa, testadas em 127.0.0.1. -->
+
+  <PropertyGroup>
+    <RootNamespace>Enneal.Algoritmos.ValidacaoJwt</RootNamespace>
+    <AssemblyName>Enneal.Algoritmos.ValidacaoJwt</AssemblyName>
+    <Description>Validação de JWT no ASP.NET Core 8 com JwtBearer: algoritmo fixo, assinatura obrigatória, chave forte, emissor, audience e validade, com os testes negativos que a sua API precisa recusar.</Description>
+  </PropertyGroup>
+
+  <!-- O ASP.NET Core vem junto com o SDK do .NET 8. -->
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <!-- O único pacote das bibliotecas: o JwtBearer oficial da Microsoft (versão em Directory.Packages.props). -->
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" />
+  </ItemGroup>
+
+</Project>

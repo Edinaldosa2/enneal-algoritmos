@@ -28,6 +28,8 @@ flowchart LR
         TV[Enneal.Algoritmos.TriagemVulnerabilidades]
         RE[Enneal.Algoritmos.RotasEsquecidas]
         CA[Enneal.Algoritmos.ControleDeAcesso]
+        CT[Enneal.Algoritmos.ComparacaoSegura]
+        JW[Enneal.Algoritmos.ValidacaoJwt]
     end
     subgraph samples["samples/ (exemplos de console)"]
         S1[n-rainhas-8x8]
@@ -45,6 +47,8 @@ flowchart LR
         S13[triagem-cvss-epss-kev]
         S14[rotas-esquecidas]
         S15[idor-checagem-de-dono]
+        S16[comparacao-tempo-constante]
+        S17[jwt-validacao]
     end
     T[tests/Enneal.Algoritmos.Tests]
 
@@ -63,6 +67,8 @@ flowchart LR
     S13 --> TV
     S14 --> RE
     S15 --> CA
+    S16 --> CT
+    S17 --> JW
     T --> src
     T --> samples
 ```
@@ -85,11 +91,15 @@ flowchart LR
 | `Enneal.Algoritmos.TriagemVulnerabilidades` | biblioteca | risco e faixa P1-P4 com CVSS, EPSS e KEV, as três ordens da fila e a fila de 400 CVEs (CSV embutido) |
 | `Enneal.Algoritmos.RotasEsquecidas` | biblioteca | tabela de rotas do site de exemplo, negar por padrão e a auditoria do checklist |
 | `Enneal.Algoritmos.ControleDeAcesso` | biblioteca | API de pedidos em memória com e sem checagem de dono e o teste de acesso |
+| `Enneal.Algoritmos.ComparacaoSegura` | biblioteca | laço que sai cedo, `FixedTimeEquals`, o modelo do que ele faz por dentro e o contador de comparações |
+| `Enneal.Algoritmos.ValidacaoJwt` | biblioteca | emissão HS256, validação frouxa x certa (JwtBearer), tokens de teste negativo e a API de teste em `127.0.0.1` |
 | `samples/*` | console | um programa por Reel, com a saída esperada em `saida-esperada.txt` |
 | `Enneal.Algoritmos.Tests` | xUnit | números dos Reels, propriedades e saída dos exemplos |
 
-Todos usam **.NET 8**, C# 12, `Nullable` ligado e nenhum pacote externo (só os testes usam xUnit). Os projetos de
-cabeçalhos e da URL referenciam o ASP.NET Core 8 com `<FrameworkReference Include="Microsoft.AspNetCore.App" />`:
+Todos usam **.NET 8**, C# 12 e `Nullable` ligado. Pacotes externos: só o xUnit nos testes e o
+`Microsoft.AspNetCore.Authentication.JwtBearer` (oficial da Microsoft) na biblioteca de JWT, porque configurá-lo é o
+assunto do Reel. Os projetos de
+cabeçalhos, da URL e do JWT referenciam o ASP.NET Core 8 com `<FrameworkReference Include="Microsoft.AspNetCore.App" />`:
 ele faz parte do .NET 8 SDK, não é pacote NuGet.
 
 ## Decisões
@@ -102,6 +112,8 @@ ele faz parte do .NET 8 SDK, não é pacote NuGet.
   compara caractere por caractere: qualquer mudança nos números quebra o build.
 - **Comentários em português.** Comentários `///` em todos os membros públicos (o build gera a documentação XML
   e mostra no IntelliSense) e comentários de linha explicando o porquê de cada passo.
+- **Relógio fixo só no teste.** Os tokens JWT do exemplo são emitidos num instante fixo; só a API de teste confere a
+  validade nesse relógio (`CertaNoRelogio`). A configuração para produção (`Certa`) não mexe no relógio.
 - **Saída igual em qualquer máquina.** `InvariantGlobalization` (ponto como separador decimal) e sementes fixas em
   tudo que é pseudoaleatório. O laboratório TLS valida os certificados numa data fixa (a do scan do notebook), e
   as portas são livres, escolhidas pelo sistema.
@@ -122,7 +134,7 @@ ele faz parte do .NET 8 SDK, não é pacote NuGet.
 | `src/Directory.Build.props` | bibliotecas: gera documentação XML (todo membro público precisa de `///`) |
 | `samples/Directory.Build.props` | exemplos: `OutputType` Exe |
 | `tests/Directory.Build.props` | marca o projeto de testes |
-| `Directory.Packages.props` | versões centrais dos pacotes NuGet (só xUnit e o SDK de testes) |
+| `Directory.Packages.props` | versões centrais dos pacotes NuGet (xUnit, o SDK de testes e o JwtBearer) |
 | `global.json` | SDK mínimo 8.0.100 (aceita versões mais novas) |
 | `.editorconfig` | estilo: UTF-8, LF, 4 espaços |
 

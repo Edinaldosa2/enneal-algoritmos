@@ -31,6 +31,8 @@
     <ProjectReference Include="../../src/Enneal.Algoritmos.Busca/Enneal.Algoritmos.Busca.csproj" />
     <ProjectReference Include="../../src/Enneal.Algoritmos.TorreHanoi/Enneal.Algoritmos.TorreHanoi.csproj" />
     <ProjectReference Include="../../src/Enneal.Algoritmos.ControleDeAcesso/Enneal.Algoritmos.ControleDeAcesso.csproj" />
+    <ProjectReference Include="../../src/Enneal.Algoritmos.ComparacaoSegura/Enneal.Algoritmos.ComparacaoSegura.csproj" />
+    <ProjectReference Include="../../src/Enneal.Algoritmos.ValidacaoJwt/Enneal.Algoritmos.ValidacaoJwt.csproj" />
     <ProjectReference Include="../../src/Enneal.Algoritmos.RotasEsquecidas/Enneal.Algoritmos.RotasEsquecidas.csproj" />
     <ProjectReference Include="../../src/Enneal.Algoritmos.TriagemVulnerabilidades/Enneal.Algoritmos.TriagemVulnerabilidades.csproj" />
     <ProjectReference Include="../../src/Enneal.Algoritmos.NotaTls/Enneal.Algoritmos.NotaTls.csproj" />
@@ -55,6 +57,8 @@
     <ProjectReference Include="../../samples/nota-do-https/NotaDoHttps.csproj" />
     <ProjectReference Include="../../samples/cabecalhos-de-seguranca/CabecalhosDeSeguranca.csproj" />
     <ProjectReference Include="../../samples/url-maliciosa/UrlMaliciosa.csproj" />
+    <ProjectReference Include="../../samples/comparacao-tempo-constante/ComparacaoTempoConstante.csproj" />
+    <ProjectReference Include="../../samples/jwt-validacao/JwtValidacao.csproj" />
   </ItemGroup>
 
   <ItemGroup>

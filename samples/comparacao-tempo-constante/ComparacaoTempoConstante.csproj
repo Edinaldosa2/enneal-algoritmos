@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Exemplo: o laço que sai cedo x FixedTimeEquals, com o modelo de custo do Reel. -->
+  <!-- Para rodar: dotnet run (dentro desta pasta). -->
+
+  <PropertyGroup>
+    <AssemblyName>ComparacaoTempoConstante</AssemblyName>
+    <RootNamespace>ComparacaoTempoConstante</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../../src/Enneal.Algoritmos.ComparacaoSegura/Enneal.Algoritmos.ComparacaoSegura.csproj" />
+  </ItemGroup>
+
+</Project>
