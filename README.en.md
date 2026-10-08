@@ -43,6 +43,17 @@ command, and **tests** that guarantee the numbers match the Reel. The code, comm
 | **Linear vs binary search** | searching a sorted array | 1,024 items: up to 1,024 vs up to 11; 1 million: 1,000,000 vs 20 | [`busca-linear-vs-binaria`](samples/busca-linear-vs-binaria) |
 | **Tower of Hanoi** | recursion, 2ⁿ − 1 moves | 3 disks: 7; 4: 15; 6: 63; 64 disks: 18,446,744,073,709,551,615 | [`torre-de-hanoi`](samples/torre-de-hanoi) |
 
+### Defensive security
+
+| Sample | Topic | Numbers from the Reel | Sample |
+|--------|-------|-----------------------|--------|
+| **HTTPS grade** | DNS → TCP → TLS → certificate → HTTP, A+ to F grade | 6 cases in a local lab: no grade, C, T, M, T, A+ | [`nota-do-https`](samples/nota-do-https) |
+| **Security headers** | HSTS, CSP, nosniff... in ASP.NET Core 8 | F (0/160) → A+ (160/160) in 10 steps | [`cabecalhos-de-seguranca`](samples/cabecalhos-de-seguranca) |
+| **Malicious URL or not?** | 30 lexical features + tree model (ONNX) behind a minimal API | 4 of 6 URLs flagged; the "clean" phishing gets through; empty URL → 400 | [`url-maliciosa`](samples/url-maliciosa) |
+| **High CVSS ≠ exploited** | CVSS vs EPSS vs KEV triage | exploited CVEs at #9, #10, #24 → #1, #2, #3; P1 3, P2 5 | [`triagem-cvss-epss-kev`](samples/triagem-cvss-epss-kev) |
+| **Forgotten routes** | auditing your own routes, deny by default | 15 checked: 1 exposed (`/.git/config`) → 0 | [`rotas-esquecidas`](samples/rotas-esquecidas) |
+| **IDOR: ownership check** | broken access control (OWASP A01) | 4 other people's orders leaked → 0 (403) | [`idor-checagem-de-dono`](samples/idor-checagem-de-dono) |
+
 Detailed pages (diagram, complexity, the code from the Reel, exercises) live in [`docs/algoritmos/`](docs/algoritmos).
 
 ---
@@ -92,11 +103,14 @@ enneal-algoritmos/
 └── .github/    CI, issue and pull request templates
 ```
 
-## Security topics are defensive toys
+## Security topics are defensive
 
-The security samples (brute force, intruder path, rate limit) are **toy simulations that teach defense**. Nothing
-leaves the process: no network, no real passwords, no third-party systems. The brute-force library only accepts a
-4-digit PIN and only "attacks" a `LoginProtegido` created in the same process. See
+The security samples teach **defense**: toy simulations, audits of your own system and local labs. Nothing leaves the
+machine: no internet access, no real passwords, no third-party systems. The only sockets (the TLS lab and the URL
+minimal API) listen on `127.0.0.1` inside the same process. Hosts are fictional (`.example`, `.invalid`, RFC 5737
+documentation IPs). The brute-force library only accepts a 4-digit PIN and only "attacks" a `LoginProtegido` created
+in the same process. The CVE queue uses public NVD, FIRST EPSS and CISA KEV data, and the URL model is the one
+exported by the notebook (trained on a CC0 dataset); sources are credited next to the files. See
 [docs/seguranca-didatica.md](docs/seguranca-didatica.md) and [SECURITY.md](SECURITY.md).
 
 ## Requirements
@@ -106,7 +120,8 @@ leaves the process: no network, no real passwords, no third-party systems. The b
 | SDK | .NET 8 or newer |
 | OS | Windows, Linux or macOS |
 
-No external packages in the libraries or samples; tests use xUnit.
+No external packages in the libraries or samples. The headers and URL samples use ASP.NET Core 8, which ships with
+the .NET 8 SDK (`FrameworkReference`). Tests use xUnit.
 
 ## Contributing
 

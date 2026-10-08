@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Nota do HTTPS: em que camada a conexão quebra e a nota pelo guia do SSL Labs, num laboratório local. -->
+
+  <PropertyGroup>
+    <RootNamespace>Enneal.Algoritmos.NotaTls</RootNamespace>
+    <AssemblyName>Enneal.Algoritmos.NotaTls</AssemblyName>
+    <Description>Checagem de HTTPS camada por camada (DNS, TCP, TLS, certificado, HTTP) e nota no estilo do SSL Labs, com servidores TLS locais em 127.0.0.1.</Description>
+  </PropertyGroup>
+
+</Project>

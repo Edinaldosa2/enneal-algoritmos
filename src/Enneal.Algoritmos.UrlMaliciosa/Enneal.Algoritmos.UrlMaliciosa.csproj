@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- URL maliciosa ou não: 30 pistas léxicas e o modelo de árvores do notebook, avaliado em C# puro. -->
+
+  <PropertyGroup>
+    <RootNamespace>Enneal.Algoritmos.UrlMaliciosa</RootNamespace>
+    <AssemblyName>Enneal.Algoritmos.UrlMaliciosa</AssemblyName>
+    <Description>Classificador de URL que lê só o texto: 30 pistas léxicas e o modelo LightGBM do notebook (ONNX), avaliado em C# puro, sem pacotes.</Description>
+  </PropertyGroup>
+
+  <!-- O modelo do notebook (sem mudança) vai dentro da DLL. -->
+  <ItemGroup>
+    <EmbeddedResource Include="modelo/url_model.onnx" LogicalName="url_model.onnx" />
+    <EmbeddedResource Include="modelo/model_meta.json" LogicalName="model_meta.json" />
+  </ItemGroup>
+
+</Project>

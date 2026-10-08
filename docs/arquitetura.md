@@ -22,6 +22,12 @@ flowchart LR
         MC[Enneal.Algoritmos.MenorCaminho]
         BU[Enneal.Algoritmos.Busca]
         TH[Enneal.Algoritmos.TorreHanoi]
+        TL[Enneal.Algoritmos.NotaTls]
+        CS[Enneal.Algoritmos.CabecalhosSeguranca]
+        UM[Enneal.Algoritmos.UrlMaliciosa]
+        TV[Enneal.Algoritmos.TriagemVulnerabilidades]
+        RE[Enneal.Algoritmos.RotasEsquecidas]
+        CA[Enneal.Algoritmos.ControleDeAcesso]
     end
     subgraph samples["samples/ (exemplos de console)"]
         S1[n-rainhas-8x8]
@@ -33,6 +39,12 @@ flowchart LR
         S7[dijkstra-a-estrela]
         S8[busca-linear-vs-binaria]
         S9[torre-de-hanoi]
+        S10[nota-do-https]
+        S11[cabecalhos-de-seguranca]
+        S12[url-maliciosa]
+        S13[triagem-cvss-epss-kev]
+        S14[rotas-esquecidas]
+        S15[idor-checagem-de-dono]
     end
     T[tests/Enneal.Algoritmos.Tests]
 
@@ -45,6 +57,12 @@ flowchart LR
     S7 --> MC
     S8 --> BU
     S9 --> TH
+    S10 --> TL
+    S11 --> CS
+    S12 --> UM
+    S13 --> TV
+    S14 --> RE
+    S15 --> CA
     T --> src
     T --> samples
 ```
@@ -61,10 +79,18 @@ flowchart LR
 | `Enneal.Algoritmos.MenorCaminho` | biblioteca | Dijkstra e A\* num mapa em grade com pesos |
 | `Enneal.Algoritmos.Busca` | biblioteca | busca linear e binária, gerador do vetor e medição de escala |
 | `Enneal.Algoritmos.TorreHanoi` | biblioteca | recursão da Torre de Hanói, pinos que conferem a regra e a conta 2ⁿ − 1 com `UInt128` |
+| `Enneal.Algoritmos.NotaTls` | biblioteca | laboratório TLS em `127.0.0.1` (AC e certificados gerados na hora), verificador por camadas e a nota no estilo do SSL Labs |
+| `Enneal.Algoritmos.CabecalhosSeguranca` | biblioteca | loja ASP.NET Core 8 por fases, GET em memória no pipeline e o avaliador de cabeçalhos (160 pontos, tetos e avisos) |
+| `Enneal.Algoritmos.UrlMaliciosa` | biblioteca | as 30 pistas léxicas, leitor de protobuf e avaliador das árvores do `url_model.onnx` (embutido) |
+| `Enneal.Algoritmos.TriagemVulnerabilidades` | biblioteca | risco e faixa P1-P4 com CVSS, EPSS e KEV, as três ordens da fila e a fila de 400 CVEs (CSV embutido) |
+| `Enneal.Algoritmos.RotasEsquecidas` | biblioteca | tabela de rotas do site de exemplo, negar por padrão e a auditoria do checklist |
+| `Enneal.Algoritmos.ControleDeAcesso` | biblioteca | API de pedidos em memória com e sem checagem de dono e o teste de acesso |
 | `samples/*` | console | um programa por Reel, com a saída esperada em `saida-esperada.txt` |
 | `Enneal.Algoritmos.Tests` | xUnit | números dos Reels, propriedades e saída dos exemplos |
 
-Todos usam **.NET 8**, C# 12, `Nullable` ligado e nenhum pacote externo (só os testes usam xUnit).
+Todos usam **.NET 8**, C# 12, `Nullable` ligado e nenhum pacote externo (só os testes usam xUnit). Os projetos de
+cabeçalhos e da URL referenciam o ASP.NET Core 8 com `<FrameworkReference Include="Microsoft.AspNetCore.App" />`:
+ele faz parte do .NET 8 SDK, não é pacote NuGet.
 
 ## Decisões
 
@@ -77,8 +103,15 @@ Todos usam **.NET 8**, C# 12, `Nullable` ligado e nenhum pacote externo (só os 
 - **Comentários em português.** Comentários `///` em todos os membros públicos (o build gera a documentação XML
   e mostra no IntelliSense) e comentários de linha explicando o porquê de cada passo.
 - **Saída igual em qualquer máquina.** `InvariantGlobalization` (ponto como separador decimal) e sementes fixas em
-  tudo que é pseudoaleatório.
-- **Segurança didática.** Os temas de segurança são simulações fechadas no próprio processo. Veja
+  tudo que é pseudoaleatório. O laboratório TLS valida os certificados numa data fixa (a do scan do notebook), e
+  as portas são livres, escolhidas pelo sistema.
+- **Dados e modelos dos notebooks sem mudança.** A fila de CVEs e o `url_model.onnx` são os arquivos que os
+  notebooks geraram, embutidos na DLL (`EmbeddedResource`), com fonte e licença ao lado. Os testes conferem a
+  paridade com as colunas e os casos que os notebooks salvaram.
+- **Sem pacote para o modelo.** O `.onnx` é avaliado em C# puro (um laço por árvore), em vez de puxar o
+  ONNX Runtime, que é um pacote nativo de centenas de MB.
+- **Segurança didática.** Os temas de segurança são simulações, auditorias e laboratórios fechados no próprio
+  processo (sockets só em `127.0.0.1`). Veja
   [seguranca-didatica.md](seguranca-didatica.md).
 
 ## Configuração do build

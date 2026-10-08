@@ -1,0 +1,7 @@
+URL 1 (normal): p=0.165815 -> ok (acertou)
+URL 2 (phishing): p=0.981784 -> maliciosa (acertou)
+URL 3 (phishing): p=0.980968 -> maliciosa (acertou)
+URL 4 (malware): p=0.999031 -> maliciosa (acertou)
+URL 5 (defacement): p=0.849362 -> maliciosa (acertou)
+URL 6 (phishing): p=0.107498 -> ok (errou)
+Resumo: 6 URLs, 4 maliciosas pelo modelo (limiar 0.768444); URL vazia -> 400

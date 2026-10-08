@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Exemplo: um site ASP.NET Core 8 vai do F ao A+ ganhando um cabeçalho de segurança por fase. -->
+  <!-- Para rodar: dotnet run (dentro desta pasta). -->
+
+  <PropertyGroup>
+    <AssemblyName>CabecalhosDeSeguranca</AssemblyName>
+    <RootNamespace>CabecalhosDeSeguranca</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../../src/Enneal.Algoritmos.CabecalhosSeguranca/Enneal.Algoritmos.CabecalhosSeguranca.csproj" />
+  </ItemGroup>
+
+</Project>
