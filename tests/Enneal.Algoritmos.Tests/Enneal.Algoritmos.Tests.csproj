@@ -30,6 +30,12 @@
     <ProjectReference Include="../../src/Enneal.Algoritmos.MenorCaminho/Enneal.Algoritmos.MenorCaminho.csproj" />
     <ProjectReference Include="../../src/Enneal.Algoritmos.Busca/Enneal.Algoritmos.Busca.csproj" />
     <ProjectReference Include="../../src/Enneal.Algoritmos.TorreHanoi/Enneal.Algoritmos.TorreHanoi.csproj" />
+    <ProjectReference Include="../../src/Enneal.Algoritmos.ControleDeAcesso/Enneal.Algoritmos.ControleDeAcesso.csproj" />
+    <ProjectReference Include="../../src/Enneal.Algoritmos.RotasEsquecidas/Enneal.Algoritmos.RotasEsquecidas.csproj" />
+    <ProjectReference Include="../../src/Enneal.Algoritmos.TriagemVulnerabilidades/Enneal.Algoritmos.TriagemVulnerabilidades.csproj" />
+    <ProjectReference Include="../../src/Enneal.Algoritmos.NotaTls/Enneal.Algoritmos.NotaTls.csproj" />
+    <ProjectReference Include="../../src/Enneal.Algoritmos.CabecalhosSeguranca/Enneal.Algoritmos.CabecalhosSeguranca.csproj" />
+    <ProjectReference Include="../../src/Enneal.Algoritmos.UrlMaliciosa/Enneal.Algoritmos.UrlMaliciosa.csproj" />
   </ItemGroup>
 
   <!-- Os exemplos: os testes rodam cada um e comparam com saida-esperada.txt. -->
@@ -43,10 +49,18 @@
     <ProjectReference Include="../../samples/dijkstra-a-estrela/DijkstraAEstrela.csproj" />
     <ProjectReference Include="../../samples/busca-linear-vs-binaria/BuscaLinearVsBinaria.csproj" />
     <ProjectReference Include="../../samples/torre-de-hanoi/TorreDeHanoi.csproj" />
+    <ProjectReference Include="../../samples/idor-checagem-de-dono/IdorChecagemDeDono.csproj" />
+    <ProjectReference Include="../../samples/rotas-esquecidas/RotasEsquecidas.csproj" />
+    <ProjectReference Include="../../samples/triagem-cvss-epss-kev/TriagemCvssEpssKev.csproj" />
+    <ProjectReference Include="../../samples/nota-do-https/NotaDoHttps.csproj" />
+    <ProjectReference Include="../../samples/cabecalhos-de-seguranca/CabecalhosDeSeguranca.csproj" />
+    <ProjectReference Include="../../samples/url-maliciosa/UrlMaliciosa.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <None Include="../../samples/*/saida-esperada.txt" LinkBase="SaidasEsperadas" CopyToOutputDirectory="PreserveNewest" />
+    <!-- Os 9 casos difíceis que o notebook da URL maliciosa salvou (pistas e probabilidade esperadas). -->
+    <None Include="Dados/*.json" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
 </Project>

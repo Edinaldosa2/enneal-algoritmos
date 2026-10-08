@@ -1,0 +1,2 @@
+Sem checagem de dono: requisições 5 | 200 ok 5 | 403 negado 0 | pedidos de outras pessoas vazados 4
+Com checagem de dono: requisições 5 | 200 ok 1 | 403 negado 4 | pedidos de outras pessoas vazados 0

@@ -2,11 +2,13 @@
 
 ## Sobre o conteúdo deste repositório
 
-Este é um repositório **educativo**. Os exemplos de segurança (força bruta, caminho do invasor e rate limit) são
-**simulações de brinquedo** que mostram por que as defesas funcionam:
+Este é um repositório **educativo**. Os exemplos de segurança são simulações de brinquedo, auditorias do próprio
+sistema e laboratórios locais que mostram por que as defesas funcionam:
 
-- nada sai do processo: nenhum exemplo usa rede, lê arquivos de senha ou acessa outro sistema;
-- o "alvo" é sempre uma variável, um mapa em texto ou uma lista de objetos do próprio programa;
+- nada sai da máquina: nenhum exemplo acessa a internet, lê arquivos de senha ou acessa outro sistema; os únicos
+  sockets (laboratório TLS e minimal API da URL) escutam em `127.0.0.1`, dentro do próprio processo;
+- o "alvo" é sempre uma variável, um mapa em texto, uma tabela de rotas, uma lista de objetos ou um servidor criado
+  pelo próprio programa, com nomes fictícios (`.example`, `.invalid`);
 - a força bruta só aceita um PIN de 4 dígitos e só "ataca" um login criado no mesmo processo.
 
 O `LoginProtegido` é material de estudo. Em produção, use a solução de identidade da sua plataforma (por exemplo
@@ -20,8 +22,8 @@ Detalhes em [docs/seguranca-didatica.md](docs/seguranca-didatica.md).
 
 | Versão | Suporte |
 |--------|---------|
-| 1.1.x | sim |
-| < 1.1 | não |
+| 1.3.x | sim |
+| < 1.3 | não |
 
 ## Como relatar uma vulnerabilidade
 

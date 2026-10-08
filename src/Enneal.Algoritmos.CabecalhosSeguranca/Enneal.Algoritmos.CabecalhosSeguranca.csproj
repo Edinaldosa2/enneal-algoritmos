@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Cabeçalhos de segurança HTTP: a nota de F a A+ e o site ASP.NET Core 8 que ganha um cabeçalho por fase. -->
+
+  <PropertyGroup>
+    <RootNamespace>Enneal.Algoritmos.CabecalhosSeguranca</RootNamespace>
+    <AssemblyName>Enneal.Algoritmos.CabecalhosSeguranca</AssemblyName>
+    <Description>Nota de cabeçalhos de segurança HTTP (HSTS, CSP, X-Frame-Options...) no estilo do securityheaders.com, e um site ASP.NET Core 8 testado em memória.</Description>
+  </PropertyGroup>
+
+  <!-- O ASP.NET Core vem junto com o SDK do .NET 8: não é pacote externo. -->
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+</Project>

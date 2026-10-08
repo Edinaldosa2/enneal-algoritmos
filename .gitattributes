@@ -12,4 +12,7 @@
 *.ps1     text eol=crlf
 *.sln     text eol=crlf
 
+*.csv     text eol=lf
+
 *.png     binary
+*.onnx    binary

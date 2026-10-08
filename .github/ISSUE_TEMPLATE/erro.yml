@@ -15,6 +15,12 @@ body:
         - Dijkstra x A*
         - Busca linear x binária
         - Torre de Hanói
+        - Nota do HTTPS
+        - Cabeçalhos de segurança
+        - URL maliciosa ou não?
+        - CVSS alto ≠ explorada (CVSS x EPSS x KEV)
+        - Rotas esquecidas
+        - IDOR: checagem de dono
         - Outro / geral
     validations:
       required: true

@@ -31,9 +31,13 @@ Ou use os scripts de [`util/`](util): `pwsh util/verificar.ps1` (Windows) ou `ba
 - **Zero avisos:** o CI compila com `-warnaserror`.
 - **Números do Reel são sagrados:** se uma mudança alterar qualquer número mostrado num vídeo, ela não entra.
   Os testes e o `saida-esperada.txt` de cada exemplo protegem isso.
-- **Sem pacotes externos** nas bibliotecas e nos exemplos.
+- **Sem pacotes externos** nas bibliotecas e nos exemplos. O ASP.NET Core pode ser usado com
+  `<FrameworkReference Include="Microsoft.AspNetCore.App" />`, porque ele já vem no .NET 8 SDK.
+- **Dados e modelos só pequenos e com licença clara** (até poucos MB), com a fonte num `README.md` ao lado do
+  arquivo e embutidos na DLL (`EmbeddedResource`).
 - **Segurança só defensiva:** leia [docs/seguranca-didatica.md](docs/seguranca-didatica.md). Nada de ferramentas de
-  ataque, alvos reais ou tráfego de rede.
+  ataque, alvos reais ou tráfego para fora da máquina: laboratórios só em `127.0.0.1` e com hosts fictícios
+  (`.example`, `.invalid`).
 
 ## Adicionando um algoritmo
 

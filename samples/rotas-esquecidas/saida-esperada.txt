@@ -1,0 +1,2 @@
+Antes da correção: rotas conferidas 15 | 200 ok 6 | 302 1 | 403 1 | 404 7 | rotas sensíveis expostas 1 (/.git/config)
+Depois da correção: rotas conferidas 15 | 200 ok 4 | 302 1 | 403 1 | 404 9 | rotas sensíveis expostas 0

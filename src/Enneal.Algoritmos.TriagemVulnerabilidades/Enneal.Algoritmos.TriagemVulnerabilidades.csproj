@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Triagem de vulnerabilidades: CVSS x EPSS x CISA KEV, com a fila de 400 CVEs do notebook. -->
+
+  <PropertyGroup>
+    <RootNamespace>Enneal.Algoritmos.TriagemVulnerabilidades</RootNamespace>
+    <AssemblyName>Enneal.Algoritmos.TriagemVulnerabilidades</AssemblyName>
+    <Description>Triagem de CVEs por CVSS, EPSS e CISA KEV (faixas P1 a P4), com a fila de demonstração de 400 CVEs públicas.</Description>
+  </PropertyGroup>
+
+  <!-- A fila de demonstração vai dentro da DLL: funciona igual em qualquer pasta e sistema. -->
+  <ItemGroup>
+    <EmbeddedResource Include="dados/remediation_queue_demo.csv" LogicalName="remediation_queue_demo.csv" />
+  </ItemGroup>
+
+</Project>

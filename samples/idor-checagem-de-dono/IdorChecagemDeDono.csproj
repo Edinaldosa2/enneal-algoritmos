@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Exemplo: IDOR na sua API de pedidos, sem e com a checagem de dono. -->
+  <!-- Para rodar: dotnet run (dentro desta pasta). -->
+
+  <PropertyGroup>
+    <AssemblyName>IdorChecagemDeDono</AssemblyName>
+    <RootNamespace>IdorChecagemDeDono</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../../src/Enneal.Algoritmos.ControleDeAcesso/Enneal.Algoritmos.ControleDeAcesso.csproj" />
+  </ItemGroup>
+
+</Project>

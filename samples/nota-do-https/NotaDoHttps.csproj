@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Exemplo: 6 sites de laboratório (127.0.0.1), onde cada conexão quebra e a nota do HTTPS. -->
+  <!-- Para rodar: dotnet run (dentro desta pasta). -->
+
+  <PropertyGroup>
+    <AssemblyName>NotaDoHttps</AssemblyName>
+    <RootNamespace>NotaDoHttps</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../../src/Enneal.Algoritmos.NotaTls/Enneal.Algoritmos.NotaTls.csproj" />
+  </ItemGroup>
+
+</Project>

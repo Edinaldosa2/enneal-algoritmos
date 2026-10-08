@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Exemplo: minimal API do ASP.NET Core 8 em 127.0.0.1 que classifica 6 URLs de exemplo pelo texto. -->
+  <!-- Para rodar: dotnet run (dentro desta pasta). -->
+
+  <PropertyGroup>
+    <AssemblyName>UrlMaliciosa</AssemblyName>
+    <RootNamespace>UrlMaliciosa</RootNamespace>
+  </PropertyGroup>
+
+  <!-- O ASP.NET Core vem junto com o SDK do .NET 8: não é pacote externo. -->
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../../src/Enneal.Algoritmos.UrlMaliciosa/Enneal.Algoritmos.UrlMaliciosa.csproj" />
+  </ItemGroup>
+
+</Project>

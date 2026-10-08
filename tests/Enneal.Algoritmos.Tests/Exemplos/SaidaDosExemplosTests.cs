@@ -24,6 +24,12 @@ public class SaidaDosExemplosTests
     [InlineData("DijkstraAEstrela", "dijkstra-a-estrela")]
     [InlineData("BuscaLinearVsBinaria", "busca-linear-vs-binaria")]
     [InlineData("TorreDeHanoi", "torre-de-hanoi")]
+    [InlineData("IdorChecagemDeDono", "idor-checagem-de-dono")]
+    [InlineData("RotasEsquecidas", "rotas-esquecidas")]
+    [InlineData("TriagemCvssEpssKev", "triagem-cvss-epss-kev")]
+    [InlineData("NotaDoHttps", "nota-do-https")]
+    [InlineData("CabecalhosDeSeguranca", "cabecalhos-de-seguranca")]
+    [InlineData("UrlMaliciosa", "url-maliciosa")]
     public void SaidaDoExemplo_IgualAoArquivoEsperado(string assembly, string pasta)
     {
         string esperado = File.ReadAllText(Path.Combine(AppContext.BaseDirectory, "SaidasEsperadas", pasta, "saida-esperada.txt"));
@@ -66,6 +72,21 @@ public class SaidaDosExemplosTests
         Assert.Equal("H3 1 1 A C", linhas[0]);
         Assert.Equal("3 discos: 7 movimentos = 2^3 - 1 = 7", linhas[7]);
         Assert.StartsWith("a 1 movimento por segundo: ", linhas[^1]);
+    }
+
+    [Theory]
+    [InlineData("IdorChecagemDeDono", "--requisicoes", 10 + 2, "R1 41 200 dono=41 Ana Souza proprio")]
+    [InlineData("RotasEsquecidas", "--rotas", 30 + 2, "R1 0 / 200 pagina nao")]
+    [InlineData("TriagemCvssEpssKev", "--fila", 400 + 5, "Q CVE-2024-50623 cvss=9.8 epss=0.98607 kev=1 ransomware=1 mistura=0.988457 risco=100.0 faixa=P1 cvss#=10 epss#=1 fila#=1")]
+    [InlineData("NotaDoHttps", "--camadas", 32, "T 1 DNS quebra | nome não existe")]
+    [InlineData("CabecalhosDeSeguranca", "--cabecalhos", 90, "F 0 200 http://loja.example/ https nao")]
+    [InlineData("UrlMaliciosa", "--pistas", 6 * 5 + 1, "U 1 https://www.example.com/produtos/tenis-corrida")]
+    public void ExemplosDeSeguranca_ComDetalhes(string assembly, string opcao, int linhasEsperadas, string primeira)
+    {
+        string[] linhas = Normalizar(RodarExemplo(assembly, opcao)).TrimEnd('\n').Split('\n');
+
+        Assert.Equal(linhasEsperadas, linhas.Length);
+        Assert.Equal(primeira, linhas[0]);
     }
 
     private static string RodarExemplo(string assembly, params string[] argumentos)

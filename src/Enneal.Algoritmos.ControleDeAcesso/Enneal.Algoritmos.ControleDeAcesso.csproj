@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Controle de acesso: a checagem de dono que evita IDOR (403 para o pedido de outra pessoa). -->
+
+  <PropertyGroup>
+    <RootNamespace>Enneal.Algoritmos.ControleDeAcesso</RootNamespace>
+    <AssemblyName>Enneal.Algoritmos.ControleDeAcesso</AssemblyName>
+    <Description>Checagem de dono numa API de pedidos em memória: sem ela, IDOR; com ela, 403 sem dados.</Description>
+  </PropertyGroup>
+
+</Project>

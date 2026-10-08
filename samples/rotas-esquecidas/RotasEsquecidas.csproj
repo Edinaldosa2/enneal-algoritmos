@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Exemplo: auditoria das rotas do seu site antes e depois de negar por padrão. -->
+  <!-- Para rodar: dotnet run (dentro desta pasta). -->
+
+  <PropertyGroup>
+    <AssemblyName>RotasEsquecidas</AssemblyName>
+    <RootNamespace>RotasEsquecidas</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../../src/Enneal.Algoritmos.RotasEsquecidas/Enneal.Algoritmos.RotasEsquecidas.csproj" />
+  </ItemGroup>
+
+</Project>

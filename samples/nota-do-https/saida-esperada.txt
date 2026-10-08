@@ -1,0 +1,6 @@
+Caso 1: does-not-exist.invalid | quebra no DNS: nome não existe | sem nota
+Caso 2: tls-v1-0.lab.example | quebra no TLS: versão recusada | nota C | 90.0 pontos
+Caso 3: expired.lab.example | quebra no Certificado: expirado | nota T (sem a confiança: A-) | 93.0 pontos
+Caso 4: wrong.host.lab.example | quebra no Certificado: nome não bate com o site | nota M (sem a confiança: A-) | 93.0 pontos
+Caso 5: self-signed.lab.example | quebra no Certificado: autoassinado | nota T (sem a confiança: A-) | 93.0 pontos
+Caso 6: seu-site.example | chegou no HTTP: 200 · HSTS 365 dias | nota A+ | 93.0 pontos

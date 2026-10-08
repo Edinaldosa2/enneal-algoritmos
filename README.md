@@ -43,11 +43,31 @@ comando e **testes** que garantem que os números são exatamente os do Reel.
 | **Busca linear x binária** | busca em vetor ordenado | 1.024 itens: até 1.024 x até 11; 1 milhão: 1.000.000 x 20 | [`busca-linear-vs-binaria`](samples/busca-linear-vs-binaria) | [docs](docs/algoritmos/busca-linear-vs-binaria.md) |
 | **Torre de Hanói** | recursão, 2ⁿ − 1 movimentos | 3 discos: 7; 4: 15; 6: 63; 64 discos: 18.446.744.073.709.551.615 | [`torre-de-hanoi`](samples/torre-de-hanoi) | [docs](docs/algoritmos/torre-de-hanoi.md) |
 
+### Segurança defensiva
+
+| Exemplo | Tema | Números do Reel | Exemplo | Explicação |
+|---------|------|-----------------|---------|------------|
+| **Nota do HTTPS** | DNS → TCP → TLS → certificado → HTTP, nota A+ a F | 6 casos em laboratório local: sem nota, C, T, M, T, A+ | [`nota-do-https`](samples/nota-do-https) | [docs](docs/algoritmos/nota-do-https.md) |
+| **Cabeçalhos de segurança** | HSTS, CSP, nosniff... no ASP.NET Core 8 | F (0/160) → A+ (160/160) em 10 fases | [`cabecalhos-de-seguranca`](samples/cabecalhos-de-seguranca) | [docs](docs/algoritmos/cabecalhos-de-seguranca.md) |
+| **URL maliciosa ou não?** | 30 pistas léxicas + modelo de árvores (ONNX) numa minimal API | 4 de 6 URLs marcadas; o phishing "limpo" passa; URL vazia → 400 | [`url-maliciosa`](samples/url-maliciosa) | [docs](docs/algoritmos/url-maliciosa.md) |
+| **CVSS alto ≠ explorada** | triagem CVSS x EPSS x KEV | exploradas em #9, #10, #24 → #1, #2, #3; P1 3, P2 5 | [`triagem-cvss-epss-kev`](samples/triagem-cvss-epss-kev) | [docs](docs/algoritmos/triagem-cvss-epss-kev.md) |
+| **Rotas esquecidas** | auditoria das suas rotas, negar por padrão | 15 conferidas: 1 exposta (`/.git/config`) → 0 | [`rotas-esquecidas`](samples/rotas-esquecidas) | [docs](docs/algoritmos/rotas-esquecidas.md) |
+| **IDOR: checagem de dono** | controle de acesso quebrado (OWASP A01) | 4 pedidos de outras pessoas vazados → 0 (403) | [`idor-checagem-de-dono`](samples/idor-checagem-de-dono) | [docs](docs/algoritmos/idor-checagem-de-dono.md) |
+
 Novos algoritmos entram aqui conforme os Reels forem saindo. Veja o [roteiro](docs/roteiro.md).
 
 ---
 
-## Novidades na v1.2.0
+## Novidades na v1.3.0
+
+| Área | Atualização |
+|------|-------------|
+| **6 Reels de segurança defensiva** | nota do HTTPS, cabeçalhos de segurança, URL maliciosa, triagem CVSS x EPSS x KEV, rotas esquecidas e IDOR |
+| **ASP.NET Core 8** | cabeçalhos e minimal API com o ASP.NET Core que já vem no SDK (`FrameworkReference`, sem pacote NuGet) |
+| **Dados públicos** | fila de 400 CVEs (NVD, FIRST EPSS, CISA KEV) e o modelo ONNX do notebook, com fonte e licença |
+| **Testes** | 349 testes xUnit, incluindo o laboratório TLS de ponta a ponta e a paridade com o notebook da URL |
+
+### v1.2.0
 
 | Área | Atualização |
 |------|-------------|
@@ -72,7 +92,7 @@ Histórico completo no [CHANGELOG](CHANGELOG.md).
 ## Sumário
 
 - [Algoritmos](#algoritmos)
-- [Novidades na v1.2.0](#novidades-na-v120)
+- [Novidades na v1.3.0](#novidades-na-v130)
 - [Como rodar](#como-rodar)
 - [Usando as bibliotecas](#usando-as-bibliotecas)
 - [Testes](#testes)
@@ -109,6 +129,12 @@ dotnet run --project samples/rate-limit-token-bucket
 dotnet run --project samples/dijkstra-a-estrela
 dotnet run --project samples/busca-linear-vs-binaria
 dotnet run --project samples/torre-de-hanoi
+dotnet run --project samples/nota-do-https
+dotnet run --project samples/cabecalhos-de-seguranca
+dotnet run --project samples/url-maliciosa
+dotnet run --project samples/triagem-cvss-epss-kev
+dotnet run --project samples/rotas-esquecidas
+dotnet run --project samples/idor-checagem-de-dono
 ```
 
 Saída do primeiro:
@@ -153,9 +179,10 @@ dotnet test
 
 | Grupo | O que confere |
 |-------|---------------|
-| Números dos Reels | cada contador mostrado nos vídeos (876/105, 7.392, 93/48, 185/235/536, 26%/96%/886, 18/89/27, 7/10, 613/10, 1.024/11, 20, 7/15/63, 2⁶⁴ − 1) |
+| Números dos Reels | cada contador mostrado nos vídeos (876/105, 7.392, 93/48, 185/235/536, 26%/96%/886, 18/89/27, 7/10, 613/10, 1.024/11, 20, 7/15/63, 2⁶⁴ − 1, e as notas, pontos, probabilidades e posições dos 6 Reels de segurança) |
 | Propriedades | soluções das N rainhas são válidas (e o 8x8 tem 92), as ordenações batem com o `Order()` do .NET, trocas do Bubble = inversões, A\* acha o mesmo custo que Dijkstra, binária nunca passa de ⌊log₂ n⌋ + 1 comparações, a Torre de Hanói faz sempre 2ⁿ − 1 movimentos e nunca põe um disco maior sobre um menor |
-| Defesas | login aceita a senha certa, bloqueia após 5 falhas, o bloqueio vence em 15 minutos, cada conta tem o seu salt; o token bucket respeita rajada e taxa |
+| Defesas | login aceita a senha certa, bloqueia após 5 falhas, o bloqueio vence em 15 minutos, cada conta tem o seu salt; o token bucket respeita rajada e taxa; a checagem de dono nunca vaza pedido de outra pessoa; negar por padrão não expõe rota fora da lista; a fila triada põe toda CVE da KEV antes das outras; cada teto de nota é aplicado |
+| Paridade com os notebooks | a triagem bate com o risco e a faixa das 400 CVEs do notebook; as 30 pistas e a probabilidade da URL batem com os 9 casos salvos pelo ONNX Runtime |
 | Saída dos exemplos | cada programa de `samples/` é executado e comparado, caractere por caractere, com o `saida-esperada.txt` |
 
 ---
@@ -172,7 +199,13 @@ enneal-algoritmos/
 │   ├── Enneal.Algoritmos.RateLimit/
 │   ├── Enneal.Algoritmos.MenorCaminho/
 │   ├── Enneal.Algoritmos.Busca/
-│   └── Enneal.Algoritmos.TorreHanoi/
+│   ├── Enneal.Algoritmos.TorreHanoi/
+│   ├── Enneal.Algoritmos.NotaTls/
+│   ├── Enneal.Algoritmos.CabecalhosSeguranca/
+│   ├── Enneal.Algoritmos.UrlMaliciosa/
+│   ├── Enneal.Algoritmos.TriagemVulnerabilidades/
+│   ├── Enneal.Algoritmos.RotasEsquecidas/
+│   └── Enneal.Algoritmos.ControleDeAcesso/
 ├── samples/                    Um programa de console por Reel (+ saida-esperada.txt)
 ├── tests/                      Enneal.Algoritmos.Tests (xUnit)
 ├── docs/                       Arquitetura, segurança didática, roteiro e uma página por algoritmo
@@ -204,12 +237,14 @@ Detalhes em [docs/arquitetura.md](docs/arquitetura.md).
 
 ## Segurança didática
 
-Os exemplos de segurança são **simulações de brinquedo** para ensinar **defesa**.
+Os exemplos de segurança ensinam **defesa**: simulações de brinquedo, auditorias do seu próprio sistema e laboratórios
+locais.
 
 | Regra | Como funciona |
 |-------|---------------|
-| Nada sai do processo | nenhum exemplo usa rede, lê arquivos de senha ou acessa outro sistema |
-| Alvo de brinquedo | o "alvo" é uma variável, um mapa em texto ou uma lista de objetos do próprio programa |
+| Nada sai da máquina | nenhum exemplo acessa a internet, lê arquivos de senha ou outro sistema; os únicos sockets (TLS e a minimal API da URL) ficam em `127.0.0.1`, dentro do próprio processo |
+| Alvo de brinquedo | o "alvo" é uma variável, um mapa em texto, uma tabela de rotas ou uma lista de objetos do próprio programa |
+| Nomes fictícios | hosts `.example`/`.invalid` e IPs de documentação (RFC 2606 e RFC 5737); pessoas e documentos inventados |
 | Escopo mínimo | a força bruta só aceita PIN de 4 dígitos e só "ataca" um login criado no mesmo processo |
 | Defesa primeiro | todo exemplo de segurança mostra a defesa funcionando e tem a seção **Como se defender** |
 
@@ -225,7 +260,8 @@ Veja [docs/seguranca-didatica.md](docs/seguranca-didatica.md) e [SECURITY.md](SE
 | Sistema | Windows, Linux ou macOS |
 | Editor (opcional) | Visual Studio 2022, Rider ou VS Code com C# Dev Kit |
 
-Nenhum pacote externo nas bibliotecas e nos exemplos. Os testes usam xUnit (baixado pelo `dotnet test`).
+Nenhum pacote externo nas bibliotecas e nos exemplos. Os exemplos de cabeçalhos e da URL usam o ASP.NET Core 8, que
+já vem no .NET 8 SDK (`FrameworkReference`). Os testes usam xUnit (baixado pelo `dotnet test`).
 
 ---
 

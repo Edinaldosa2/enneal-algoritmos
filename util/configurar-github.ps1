@@ -21,6 +21,10 @@ gh repo edit $repo `
     --add-topic recursion `
     --add-topic tower-of-hanoi `
     --add-topic rate-limiting `
+    --add-topic tls `
+    --add-topic security-headers `
+    --add-topic owasp `
+    --add-topic aspnetcore `
     --add-topic seguranca `
     --add-topic educacao `
     --add-topic xunit

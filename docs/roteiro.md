@@ -23,6 +23,17 @@
 
 - [x] Torre de Hanói (recursão)
 
+## Versão 1.3 — Feito
+
+Segurança defensiva:
+
+- [x] Nota do HTTPS (TLS e certificado, em laboratório local)
+- [x] Cabeçalhos de segurança no ASP.NET Core 8 (F → A+)
+- [x] URL maliciosa ou não? (modelo ONNX numa minimal API)
+- [x] CVSS alto ≠ explorada (triagem CVSS x EPSS x KEV)
+- [x] Rotas esquecidas (auditoria e negar por padrão)
+- [x] IDOR: checagem de dono
+
 ## Próximos Reels
 
 - Tem uma ideia? Abra uma issue com o modelo **Ideia de algoritmo**.

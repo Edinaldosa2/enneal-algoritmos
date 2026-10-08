@@ -1,0 +1,5 @@
+1) CVSS primeiro: exploradas (KEV) em #9, #10, #24
+2) + EPSS: exploradas em #1, #2, #19
+3) + KEV: exploradas em #1, #2, #3 | P1 3, P2 5, P3 197, P4 195
+Topo do 'CVSS >= 9 primeiro': 31 | P1+P2: 8 (3 exploradas)
+Conferência com o notebook: risco 400/400, faixa 400/400, ordem da fila igual

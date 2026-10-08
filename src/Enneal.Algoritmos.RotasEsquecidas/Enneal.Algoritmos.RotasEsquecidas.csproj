@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Auditoria das rotas do seu próprio site: negar por padrão e tirar as sobras do deploy. -->
+
+  <PropertyGroup>
+    <RootNamespace>Enneal.Algoritmos.RotasEsquecidas</RootNamespace>
+    <AssemblyName>Enneal.Algoritmos.RotasEsquecidas</AssemblyName>
+    <Description>Auditoria das rotas do seu próprio site (em memória): rotas esquecidas antes e depois de negar por padrão.</Description>
+  </PropertyGroup>
+
+</Project>

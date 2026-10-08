@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Exemplo: a mesma fila de 400 CVEs ordenada por CVSS, por CVSS + EPSS e pela triagem com a KEV. -->
+  <!-- Para rodar: dotnet run (dentro desta pasta). -->
+
+  <PropertyGroup>
+    <AssemblyName>TriagemCvssEpssKev</AssemblyName>
+    <RootNamespace>TriagemCvssEpssKev</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../../src/Enneal.Algoritmos.TriagemVulnerabilidades/Enneal.Algoritmos.TriagemVulnerabilidades.csproj" />
+  </ItemGroup>
+
+</Project>

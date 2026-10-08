@@ -26,9 +26,9 @@ bash util/verificar.sh
 ## Publicando uma versão
 
 ```powershell
-git tag -a v1.2.0 -m "enneal-algoritmos 1.2.0"
+git tag -a v1.3.0 -m "enneal-algoritmos 1.3.0"
 git push origin main
-git push origin v1.2.0
+git push origin v1.3.0
 ```
 
 Depois, opcionalmente, crie um Release no GitHub a partir da tag.
