@@ -1,21 +1,22 @@
-Português | [English](README.en.md)
+[Português](README.md) | English
 
-# Dijkstra x A*
 
-Como o GPS acha a rota: as duas buscas acham a rota de custo 18; Dijkstra explora 89 nós, A* só 27 (70% menos).
+# Dijkstra vs A*
 
-Reel: (link em breve)
+How GPS finds a route: both searches find a route of cost 18; Dijkstra explores 89 nodes, A* only 27 (70% fewer).
 
-## Como rodar
+Reel: (link coming soon)
 
-Precisa do [.NET 8 SDK](https://dotnet.microsoft.com/download) (grátis).
+## How to run
+
+You need the [.NET 8 SDK](https://dotnet.microsoft.com/download) (free).
 
 ```bash
 cd samples/dijkstra-a-estrela
 dotnet run
 ```
 
-## Saída esperada
+## Expected output
 
 ```
 Dijkstra: rota de custo 18, 89 nós explorados
@@ -49,10 +50,10 @@ A* (27 nós explorados):
    . . . . . . . . m . . . . . . . .
 ```
 
-Este arquivo também está em [`saida-esperada.txt`](saida-esperada.txt), e os testes conferem que a saída continua
-idêntica.
+This file is also in [`saida-esperada.txt`](saida-esperada.txt), and the tests check that the output stays
+identical.
 
-## Onde está o algoritmo
+## Where the algorithm is
 
-- Explicação completa, diagrama e complexidade: [`docs/algoritmos/dijkstra-a-estrela.md`](../../docs/algoritmos/dijkstra-a-estrela.md)
-- Código comentado: [`src/Enneal.Algoritmos.MenorCaminho`](../../src/Enneal.Algoritmos.MenorCaminho)
+- Full explanation, diagram and complexity: [`docs/algoritmos/dijkstra-a-estrela.md`](../../docs/algoritmos/dijkstra-a-estrela.md)
+- Commented code: [`src/Enneal.Algoritmos.MenorCaminho`](../../src/Enneal.Algoritmos.MenorCaminho)

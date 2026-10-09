@@ -1,3 +1,5 @@
+Português | [English](README.en.md)
+
 # Qual a nota do HTTPS do seu site?
 
 Uma conexão HTTPS passa por **DNS → TCP → TLS → Certificado → HTTP**. Em 6 casos, o verificador mostra onde ela quebra (com `SslStream` e validação X509 de verdade) e dá a nota de A+ a F no estilo do guia do SSL Labs.

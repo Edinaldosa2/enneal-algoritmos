@@ -1,3 +1,5 @@
+Português | [English](README.en.md)
+
 # Torre de Hanói (recursão)
 
 Levar a torre do pino A para o C, um disco por vez, sem nunca pôr um disco maior sobre um menor:

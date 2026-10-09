@@ -1,3 +1,5 @@
+Português | [English](README.en.md)
+
 # Força bruta x login protegido
 
 Simulação didática: o PIN 7391 cai em 7.392 tentativas sem proteção; com hash + bloqueio, a conta trava após 5 erros.

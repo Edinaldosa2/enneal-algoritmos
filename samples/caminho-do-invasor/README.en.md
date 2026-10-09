@@ -1,23 +1,24 @@
-Português | [English](README.en.md)
+[Português](README.md) | English
 
-# Caminho do invasor
 
-Busca em largura num mapa abstrato: sem defesas, o invasor chega no banco em 93 passos; com 4 camadas, 0 caminhos.
+# Intruder path
 
-Reel: (link em breve)
+Breadth-first search on an abstract map: with no defenses, the intruder reaches the bank in 93 steps; with 4 layers, 0 paths.
 
-> Demo educativa de defesa em camadas: nada de rede, IPs ou alvos reais.
+> Educational defense-in-depth demo: no network, IPs or real targets.
 
-## Como rodar
+Reel: (link coming soon)
 
-Precisa do [.NET 8 SDK](https://dotnet.microsoft.com/download) (grátis).
+## How to run
+
+You need the [.NET 8 SDK](https://dotnet.microsoft.com/download) (free).
 
 ```bash
 cd samples/caminho-do-invasor
 dotnet run
 ```
 
-## Saída esperada
+## Expected output
 
 ```
 == Round 1: rede SEM defesas ==
@@ -47,10 +48,10 @@ em camadas: PROTEGIDO, 0 caminhos até o banco (48 células exploradas)
    . . . . . . B . . . . . .
 ```
 
-Este arquivo também está em [`saida-esperada.txt`](saida-esperada.txt), e os testes conferem que a saída continua
-idêntica.
+This file is also in [`saida-esperada.txt`](saida-esperada.txt), and the tests check that the output stays
+identical.
 
-## Onde está o algoritmo
+## Where the algorithm is
 
-- Explicação completa, diagrama e complexidade: [`docs/algoritmos/caminho-do-invasor.md`](../../docs/algoritmos/caminho-do-invasor.md)
-- Código comentado: [`src/Enneal.Algoritmos.CaminhoInvasor`](../../src/Enneal.Algoritmos.CaminhoInvasor)
+- Full explanation, diagram and complexity: [`docs/algoritmos/caminho-do-invasor.md`](../../docs/algoritmos/caminho-do-invasor.md)
+- Commented code: [`src/Enneal.Algoritmos.CaminhoInvasor`](../../src/Enneal.Algoritmos.CaminhoInvasor)

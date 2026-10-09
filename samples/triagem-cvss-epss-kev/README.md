@@ -1,3 +1,5 @@
+Português | [English](README.en.md)
+
 # CVSS alto não é explorada: triagem com CVSS x EPSS x KEV
 
 A mesma fila de **400 CVEs públicas** ordenada de 3 jeitos: maior CVSS primeiro (o hábito), CVSS + EPSS e a triagem com a KEV da CISA. As 3 CVEs já exploradas saem de #9, #10 e #24 para #1, #2 e #3.

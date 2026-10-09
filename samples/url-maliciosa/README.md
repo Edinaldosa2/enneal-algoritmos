@@ -1,3 +1,5 @@
+Português | [English](README.en.md)
+
 # URL maliciosa ou não?
 
 Seis URLs de exemplo passam por um classificador que lê **só o texto da URL**: 30 pistas léxicas e o modelo de árvores (LightGBM) treinado no notebook, servido por uma minimal API do ASP.NET Core 8 (`POST /score`). Quatro são marcadas; a URL 6, um phishing "limpo", passa.

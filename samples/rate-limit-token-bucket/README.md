@@ -1,3 +1,5 @@
+Português | [English](README.en.md)
+
 # Rate limit x DDoS
 
 Fila de servidor sob enxurrada: sem limite, 26% dos pedidos legítimos atendidos; com token bucket, 96% (886 bloqueadas com 429).

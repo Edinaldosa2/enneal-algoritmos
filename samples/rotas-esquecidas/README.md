@@ -1,3 +1,5 @@
+Português | [English](README.en.md)
+
 # Rotas esquecidas no seu site: negar por padrão
 
 Auditoria das rotas do **seu próprio site** (`seu-site.example`) antes do deploy: das 15 rotas do checklist, uma sobra do deploy (`/.git/config`) responde 200 e expõe o repositório. Depois da correção (negar por padrão e sem listagem de diretório), nenhuma rota sensível fica exposta.

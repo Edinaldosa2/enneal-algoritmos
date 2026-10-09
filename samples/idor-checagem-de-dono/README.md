@@ -1,3 +1,5 @@
+Português | [English](README.en.md)
+
 # Controle de acesso quebrado (IDOR): a checagem de dono
 
 Logada como a cliente #41, o teste da **sua própria API** pede `/api/pedidos/41` a `45`. Sem checagem de dono, a API entrega 4 pedidos de outras pessoas; com a checagem, responde **403** sem nenhum dado.

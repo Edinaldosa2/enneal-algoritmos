@@ -1,3 +1,5 @@
+Português | [English](README.en.md)
+
 # Busca linear x busca binária
 
 Mesmo vetor ordenado de 1.024 itens: linear até 1.024 comparações, binária até 11. Com 1 milhão: 1.000.000 x 20.

@@ -1,3 +1,5 @@
+Português | [English](README.en.md)
+
 # Do F ao A+: um cabeçalho de segurança por vez
 
 Um site **ASP.NET Core 8** (`loja.example`) começa com nota F e ganha um cabeçalho de segurança por fase (HTTPS, HSTS, nosniff, X-Frame-Options, Referrer-Policy, Permissions-Policy, cookies, COOP/COEP/CORP e CSP) até o **A+**.

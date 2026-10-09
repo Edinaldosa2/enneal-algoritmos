@@ -1,3 +1,5 @@
+Português | [English](README.en.md)
+
 # Modelo do classificador de URL
 
 `url_model.onnx` e `model_meta.json` são os arquivos que o notebook

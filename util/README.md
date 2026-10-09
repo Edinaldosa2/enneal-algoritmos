@@ -1,3 +1,5 @@
+Português | [English](README.en.md)
+
 # util — scripts de manutenção
 
 | Script | O que faz |

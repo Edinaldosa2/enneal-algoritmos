@@ -1,3 +1,5 @@
+Português | [English](README.en.md)
+
 # Comparação em tempo constante
 
 Comparar segredo (token de API, assinatura HMAC, código de reset) com `==` ou com um laço que **sai no primeiro caractere diferente** deixa o custo depender de quantas letras do começo estão certas. O conserto é uma linha do .NET: `CryptographicOperations.FixedTimeEquals`, que custa sempre o mesmo.

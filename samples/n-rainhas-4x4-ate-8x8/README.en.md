@@ -1,21 +1,22 @@
-Português | [English](README.en.md)
+[Português](README.md) | English
 
-# N-Rainhas de 4x4 até 8x8
 
-Resolve 4x4, 5x5, 6x6, 7x7 e 8x8 em sequência e compara o esforço de cada tabuleiro.
+# N-Queens from 4x4 to 8x8
 
-Reel: (link em breve)
+Solves 4x4, 5x5, 6x6, 7x7 and 8x8 in sequence and compares the effort of each board.
 
-## Como rodar
+Reel: (link coming soon)
 
-Precisa do [.NET 8 SDK](https://dotnet.microsoft.com/download) (grátis).
+## How to run
+
+You need the [.NET 8 SDK](https://dotnet.microsoft.com/download) (free).
 
 ```bash
 cd samples/n-rainhas-4x4-ate-8x8
 dotnet run
 ```
 
-## Saída esperada
+## Expected output
 
 ```
 4x4: 1 3 0 2 | tentativas 26 | voltas 4
@@ -66,10 +67,10 @@ Do mais fácil ao mais difícil (tentativas até a 1ª solução):
   8x8:  876 tentativas, 105 voltas
 ```
 
-Este arquivo também está em [`saida-esperada.txt`](saida-esperada.txt), e os testes conferem que a saída continua
-idêntica.
+This file is also in [`saida-esperada.txt`](saida-esperada.txt), and the tests check that the output stays
+identical.
 
-## Onde está o algoritmo
+## Where the algorithm is
 
-- Explicação completa, diagrama e complexidade: [`docs/algoritmos/n-rainhas.md`](../../docs/algoritmos/n-rainhas.md)
-- Código comentado: [`src/Enneal.Algoritmos.NRainhas`](../../src/Enneal.Algoritmos.NRainhas)
+- Full explanation, diagram and complexity: [`docs/algoritmos/n-rainhas.md`](../../docs/algoritmos/n-rainhas.md)
+- Commented code: [`src/Enneal.Algoritmos.NRainhas`](../../src/Enneal.Algoritmos.NRainhas)

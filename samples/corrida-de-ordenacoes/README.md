@@ -1,3 +1,5 @@
+Português | [English](README.en.md)
+
 # Corrida de ordenações
 
 Bubble x Quick x Merge no mesmo vetor de 28 números: 1º Quick (185), 2º Merge (235), 3º Bubble (536).

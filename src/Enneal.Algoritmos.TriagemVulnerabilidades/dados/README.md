@@ -1,3 +1,5 @@
+Português | [English](README.en.md)
+
 # Fila de demonstração (dados públicos)
 
 `remediation_queue_demo.csv` é a saída `outputs/remediation_queue_demo.csv` do notebook

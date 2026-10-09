@@ -6,7 +6,7 @@ $ErrorActionPreference = 'Stop'
 $repo = 'Edinaldosa2/enneal-algoritmos'
 
 gh repo edit $repo `
-    --description 'O código completo dos algoritmos dos Reels da Enneal (@enneal.it): C# / .NET 8, comentado em português e testado.' `
+    --description 'O código completo dos algoritmos dos Reels da Enneal (@enneal.it): C# / .NET 8, em português e inglês, testado.' `
     --homepage 'https://enneal.com.br' `
     --add-topic algoritmos `
     --add-topic csharp `

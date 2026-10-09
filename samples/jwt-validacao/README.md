@@ -1,3 +1,5 @@
+Português | [English](README.en.md)
+
 # Validando JWT do jeito certo
 
 Os mesmos 6 tokens HS256 em duas APIs **ASP.NET Core 8** com JwtBearer: uma com a validação frouxa (aceita token sem assinatura e não confere audience nem validade) e outra com a certa (algoritmo fixo, assinatura obrigatória, chave forte, emissor, audience e validade). Tokens ruins aceitos: **frouxa 3 de 4, certa 0 de 4**.

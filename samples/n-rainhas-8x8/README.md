@@ -1,3 +1,5 @@
+Português | [English](README.en.md)
+
 # N-Rainhas 8x8
 
 Resolve o clássico 8x8 com backtracking e desenha o tabuleiro: 876 tentativas e 105 voltas até a primeira solução.
