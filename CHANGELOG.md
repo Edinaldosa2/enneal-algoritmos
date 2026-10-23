@@ -5,6 +5,18 @@ Todas as mudanças importantes deste repositório ficam registradas aqui.
 O formato segue o [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) e as versões seguem o
 [Versionamento Semântico](https://semver.org/lang/pt-BR/).
 
+## [Não lançado]
+
+### Adicionado
+
+- **Validação de entrada** (`Enneal.Algoritmos.ValidacaoEntrada`, `samples/validacao-de-entrada`): o contrato
+  `IValidadorDeEntrada` registrado no DI e consumido pelo `ServicoDeCadastro`; `DetectarTipo` (inteiro, decimal,
+  data, e-mail, texto) com `TryParse` e cultura invariante, sem regex; limite de tamanho antes e depois da
+  normalização NFKC; allowlist de caracteres; `HtmlEncoder` contra XSS e `SqliteParameter` contra SQL injection,
+  cada um com o jeito errado ao lado. 82 testes xUnit num projeto próprio
+  (`tests/Enneal.Algoritmos.ValidacaoEntrada.Tests`, com a globalização ligada para o NFKC) e o roteiro narrado do
+  vídeo em `samples/validacao-de-entrada/roteiro-video.md`.
+
 ## 1.3.0 - 2026-10-08
 
 ### Adicionado

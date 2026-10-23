@@ -1,0 +1,30 @@
+DI: IValidadorDeEntrada -> ValidadorDeEntrada
+
+Detectar o tipo:
+  42                     -> Inteiro
+  -7                     -> Inteiro
+  19.90                  -> Decimal
+  2026-10-23             -> Data
+  ana@exemplo.example    -> Email
+  1e9                    -> Texto
+  0x1F                   -> Texto
+  2026-02-30             -> Texto
+  Olá, mundo             -> Texto
+
+Cadastro:
+  válido               -> gravado (id 4)
+  idade com SQL        -> recusado: idade: mais de 3 caracteres
+  idade negativa       -> recusado: idade: fora da faixa
+  e-mail com nome      -> recusado: email: e-mail inválido
+  data impossível      -> recusado: nascimento: data inválida (use aaaa-MM-dd)
+  caractere invisível  -> recusado: nome: caractere não permitido
+  nome gigante         -> recusado: nome: grande demais
+
+XSS: "<script>alert(1)</script>" passa na validação de texto? sim
+  errado: <p><script>alert(1)</script></p>
+  certo:  <p>&lt;script&gt;alert(1)&lt;/script&gt;</p>
+  disfarce "＜script＞" depois do NFKC: "<script>"
+
+SQLi: buscar o nome "' OR '1'='1"
+  errado (concatenado):   4 linhas
+  certo  (parametrizado): 0 linhas

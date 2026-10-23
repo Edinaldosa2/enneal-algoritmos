@@ -41,6 +41,7 @@ defesa:
 | [IDOR: checagem de dono](algoritmos/idor-checagem-de-dono.md) | API que entrega o pedido de outra pessoa | checagem de dono no servidor (403), usuário vindo da sessão, teste de acesso no CI |
 | [Comparação em tempo constante](algoritmos/comparacao-tempo-constante.md) | laço que sai cedo e vaza o prefixo certo (modelo de custo) | `CryptographicOperations.FixedTimeEquals`, hash para senhas, limite de tentativas |
 | [JWT do jeito certo](algoritmos/jwt-validacao.md) | API frouxa aceitando token sem assinatura, de outra API ou vencido | algoritmo fixo, assinatura obrigatória, chave forte, emissor, audience, validade curta |
+| [Validação de entrada](algoritmos/validacao-de-entrada.md) | formulário com SQL na idade, e-mail com nome, data impossível, `U+202E`, `<script>` e `' OR '1'='1` | contrato no DI, allowlist, NFKC, `TryParse`, faixa, `HtmlEncoder` na saída, consulta parametrizada |
 
 ## Contribuições
 

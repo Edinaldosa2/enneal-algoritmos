@@ -55,6 +55,7 @@ comando e **testes** que garantem que os números são exatamente os do Reel.
 | **IDOR: checagem de dono** | controle de acesso quebrado (OWASP A01) | 4 pedidos de outras pessoas vazados → 0 (403) | [`idor-checagem-de-dono`](samples/idor-checagem-de-dono) | [docs](docs/algoritmos/idor-checagem-de-dono.md) |
 | **Comparação em tempo constante** | `==` x `FixedTimeEquals` (modelo de custo) | custos 1, 4, 2, 6, 3, 6 → 6 em todos; mesma resposta em 6/6 | [`comparacao-tempo-constante`](samples/comparacao-tempo-constante) | [docs](docs/algoritmos/comparacao-tempo-constante.md) |
 | **JWT do jeito certo** | JwtBearer no ASP.NET Core 8: frouxo x certo | tokens ruins aceitos: frouxa 3 de 4, certa 0 de 4 | [`jwt-validacao`](samples/jwt-validacao) | [docs](docs/algoritmos/jwt-validacao.md) |
+| **Validação de entrada** | contrato no DI, tipo com `TryParse`, NFKC, allowlist, XSS e SQLi errado x certo | 6 de 7 entradas recusadas; SQLi: 4 linhas concatenado → 0 parametrizado | [`validacao-de-entrada`](samples/validacao-de-entrada) | [docs](docs/algoritmos/validacao-de-entrada.md) |
 
 Novos algoritmos entram aqui conforme os Reels forem saindo. Veja o [roteiro](docs/roteiro.md).
 
@@ -139,6 +140,7 @@ dotnet run --project samples/rotas-esquecidas
 dotnet run --project samples/idor-checagem-de-dono
 dotnet run --project samples/comparacao-tempo-constante
 dotnet run --project samples/jwt-validacao
+dotnet run --project samples/validacao-de-entrada
 ```
 
 Saída do primeiro:
@@ -188,6 +190,7 @@ dotnet test
 | Defesas | login aceita a senha certa, bloqueia após 5 falhas, o bloqueio vence em 15 minutos, cada conta tem o seu salt; o token bucket respeita rajada e taxa; a checagem de dono nunca vaza pedido de outra pessoa; negar por padrão não expõe rota fora da lista; a fila triada põe toda CVE da KEV antes das outras; cada teto de nota é aplicado; o laço que sai cedo vaza o prefixo e o `FixedTimeEquals` custa sempre o tamanho; a API certa recusa token sem assinatura, editado, de outra audience ou vencido |
 | Paridade com os notebooks | a triagem bate com o risco e a faixa das 400 CVEs do notebook; as 30 pistas e a probabilidade da URL batem com os 9 casos salvos pelo ONNX Runtime |
 | Saída dos exemplos | cada programa de `samples/` é executado e comparado, caractere por caractere, com o `saida-esperada.txt` |
+| Validação de entrada | projeto à parte ([`Enneal.Algoritmos.ValidacaoEntrada.Tests`](tests/Enneal.Algoritmos.ValidacaoEntrada.Tests), com a globalização ligada para o NFKC): 82 testes com SQL na idade, `1e2`, `NaN`, e-mail com nome de exibição, data impossível, `U+202E`, byte nulo, `<img onerror>`, `' UNION SELECT`, a troca do validador por um falso e a saída do exemplo |
 
 ---
 
@@ -211,9 +214,10 @@ enneal-algoritmos/
 │   ├── Enneal.Algoritmos.RotasEsquecidas/
 │   ├── Enneal.Algoritmos.ControleDeAcesso/
 │   ├── Enneal.Algoritmos.ComparacaoSegura/
-│   └── Enneal.Algoritmos.ValidacaoJwt/
+│   ├── Enneal.Algoritmos.ValidacaoJwt/
+│   └── Enneal.Algoritmos.ValidacaoEntrada/
 ├── samples/                    Um programa de console por Reel (+ saida-esperada.txt)
-├── tests/                      Enneal.Algoritmos.Tests (xUnit)
+├── tests/                      Enneal.Algoritmos.Tests e Enneal.Algoritmos.ValidacaoEntrada.Tests (xUnit)
 ├── docs/                       Arquitetura, segurança didática, roteiro e uma página por algoritmo
 ├── img/                        Banner
 ├── util/                       Scripts de verificação e de configuração do GitHub
@@ -266,8 +270,10 @@ Veja [docs/seguranca-didatica.md](docs/seguranca-didatica.md) e [SECURITY.md](SE
 | Sistema | Windows, Linux ou macOS |
 | Editor (opcional) | Visual Studio 2022, Rider ou VS Code com C# Dev Kit |
 
-Nenhum pacote externo nas bibliotecas e nos exemplos, com uma exceção: o exemplo de JWT usa o pacote oficial da
-Microsoft `Microsoft.AspNetCore.Authentication.JwtBearer` (configurá-lo direito é o assunto do Reel). Os exemplos de
+Nenhum pacote externo nas bibliotecas e nos exemplos, com duas exceções, ambas pacotes oficiais da Microsoft: o
+exemplo de JWT usa o `Microsoft.AspNetCore.Authentication.JwtBearer` (configurá-lo direito é o assunto do Reel) e o
+de validação de entrada usa o `Microsoft.Extensions.DependencyInjection` e o `Microsoft.Data.Sqlite` (o DI e a
+consulta parametrizada são o assunto do vídeo). Os exemplos de
 cabeçalhos, URL e JWT usam o ASP.NET Core 8, que já vem no .NET 8 SDK (`FrameworkReference`). Os testes usam xUnit.
 Os pacotes são baixados pelo `dotnet build`/`dotnet test`.
 

@@ -55,6 +55,7 @@ that guarantee the numbers are exactly the ones from the Reel.
 | **IDOR: ownership check** | broken access control (OWASP A01) | 4 other people's orders leaked → 0 (403) | [`idor-checagem-de-dono`](samples/idor-checagem-de-dono) | [docs](docs/algoritmos/idor-checagem-de-dono.md) |
 | **Constant-time comparison** | `==` vs `FixedTimeEquals` (cost model) | costs 1, 4, 2, 6, 3, 6 → 6 for all; same answer in 6/6 | [`comparacao-tempo-constante`](samples/comparacao-tempo-constante) | [docs](docs/algoritmos/comparacao-tempo-constante.md) |
 | **Validating JWT the right way** | JwtBearer in ASP.NET Core 8: loose vs strict | bad tokens accepted: loose 3 of 4, strict 0 of 4 | [`jwt-validacao`](samples/jwt-validacao) | [docs](docs/algoritmos/jwt-validacao.md) |
+| **Input validation** | contract in DI, type via `TryParse`, NFKC, allowlist, XSS and SQLi wrong vs right | 6 of 7 inputs rejected; SQLi: 4 rows concatenated → 0 parameterized | [`validacao-de-entrada`](samples/validacao-de-entrada) | [docs](docs/algoritmos/validacao-de-entrada.md) |
 
 New algorithms land here as the Reels ship. See the [roadmap](docs/roteiro.md).
 
@@ -139,6 +140,7 @@ dotnet run --project samples/rotas-esquecidas
 dotnet run --project samples/idor-checagem-de-dono
 dotnet run --project samples/comparacao-tempo-constante
 dotnet run --project samples/jwt-validacao
+dotnet run --project samples/validacao-de-entrada
 ```
 
 Output of the first one:
@@ -188,6 +190,7 @@ dotnet test
 | Defenses | login accepts the right password, locks after 5 failures, lockout expires in 15 minutes, each account has its own salt; the token bucket respects burst and rate; ownership check never leaks someone else's order; deny-by-default does not expose a route outside the allow list; the triaged queue puts every KEV CVE before the others; every grade ceiling is applied; the early-exit loop leaks the prefix and `FixedTimeEquals` always costs the length; the strict API rejects unsigned, edited, wrong-audience or expired tokens |
 | Notebook parity | triage matches risk and tier for the 400 CVEs from the notebook; the 30 URL features and probability match the 9 cases saved by ONNX Runtime |
 | Sample output | each program under `samples/` is run and compared, character by character, with `saida-esperada.txt` |
+| Input validation | separate project ([`Enneal.Algoritmos.ValidacaoEntrada.Tests`](tests/Enneal.Algoritmos.ValidacaoEntrada.Tests), with globalization on for NFKC): 82 tests with SQL in the age field, `1e2`, `NaN`, email with a display name, impossible date, `U+202E`, null byte, `<img onerror>`, `' UNION SELECT`, swapping the validator for a fake, and the sample output |
 
 ---
 
@@ -211,9 +214,10 @@ enneal-algoritmos/
 │   ├── Enneal.Algoritmos.RotasEsquecidas/
 │   ├── Enneal.Algoritmos.ControleDeAcesso/
 │   ├── Enneal.Algoritmos.ComparacaoSegura/
-│   └── Enneal.Algoritmos.ValidacaoJwt/
+│   ├── Enneal.Algoritmos.ValidacaoJwt/
+│   └── Enneal.Algoritmos.ValidacaoEntrada/
 ├── samples/                    One console program per Reel (+ saida-esperada.txt)
-├── tests/                      Enneal.Algoritmos.Tests (xUnit)
+├── tests/                      Enneal.Algoritmos.Tests and Enneal.Algoritmos.ValidacaoEntrada.Tests (xUnit)
 ├── docs/                       Architecture, educational security, roadmap and one page per algorithm
 ├── img/                        Banner
 ├── util/                       Verification and GitHub setup scripts
@@ -265,8 +269,10 @@ See [docs/seguranca-didatica.md](docs/seguranca-didatica.md) and [SECURITY.md](S
 | OS | Windows, Linux or macOS |
 | Editor (optional) | Visual Studio 2022, Rider or VS Code with C# Dev Kit |
 
-No external packages in the libraries and samples, with one exception: the JWT sample uses Microsoft's official
-`Microsoft.AspNetCore.Authentication.JwtBearer` package (configuring it correctly is the point of that Reel). The
+No external packages in the libraries and samples, with two exceptions, both official Microsoft packages: the JWT
+sample uses `Microsoft.AspNetCore.Authentication.JwtBearer` (configuring it correctly is the point of that Reel) and
+the input validation sample uses `Microsoft.Extensions.DependencyInjection` and `Microsoft.Data.Sqlite` (DI and the
+parameterized query are the point of that video). The
 headers, URL and JWT samples use ASP.NET Core 8, which ships with the .NET 8 SDK (`FrameworkReference`). Tests use
 xUnit. Packages are downloaded by `dotnet build`/`dotnet test`.
 
